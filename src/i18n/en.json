@@ -1,0 +1,562 @@
+{
+  "meta": {
+    "title": "Chao Anouvong Park — riverside city park, Vientiane, Laos",
+    "description": "An independent, non-commercial visitor guide to Chao Anouvong Park: King Anouvong statue, Mekong sunset, night market and riverside walk — hours, how to get there, and the best time to visit."
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "history": "History",
+    "guide": "Visitor guide",
+    "food": "Nearby food",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "map": "Map"
+  },
+  "hero": {
+    "eyebrow": "Vientiane · Laos",
+    "titleMain": "Chao Anouvong Park",
+    "titleAccent": "Chao Anouvong Park",
+    "subtitle": "Discover the heart of Vientiane — the King's statue facing the Mekong, riverside promenades, and stunning sunset views.",
+    "slogan": "Gaze into history, feel the pulse of Vientiane by the Mekong.",
+    "cta1": "Plan your visit",
+    "cta2": "Getting there",
+    "rating": "4.2",
+    "reviewCount": "6,873",
+    "viewLocation": "View on Google Maps",
+    "boardCategory": "Vientiane attractions",
+    "boardTitle": "Chao Anouvong Park",
+    "boardEn": "Chao Anouvong Park",
+    "coordsLabel": "17.9616°N, 102.6073°E · Vientiane Center",
+    "plannerTitle": "Sun & sky planner",
+    "liveWeather": "Live",
+    "plannerNote": "Times are estimates for the park's location",
+    "defaultTemp": "31°",
+    "defaultCond": "Partly cloudy",
+    "defaultWind": "8 km/h",
+    "sunsetIndexLabel": "Tonight's sky",
+    "sunsetIndexDefault": "Soft sunset",
+    "goldenHourLabel": "Golden hour",
+    "sunsetLabel": "Sunset",
+    "blueHourLabel": "Blue hour",
+    "crowdWarningLabel": "Crowds",
+    "defaultGolden": "17:35 – 18:05",
+    "defaultSunset": "18:25",
+    "defaultBlue": "18:45 – 19:15",
+    "defaultTip": "Quietest in the morning",
+    "lightCaption": "Live data from Open-Meteo at the park's coordinates",
+    "weatherError": "Could not load weather",
+    "goldenChanceLabel": "Golden-light chance"
+  },
+  "about": {
+    "label": "About the park",
+    "heading": "An urban oasis by the Mekong",
+    "lead": "Located in the center of Vientiane, Chao Anouvong Park stretches along the Mekong River and is one of the city's most popular public spaces.",
+    "paragraph1": "The park is named after King Anouvong, a famous figure in Lao history. His bronze statue stands tall, holding a sword in one hand and pointing towards Thailand across the Mekong with the other, symbolizing the independence and dignity of the Lao people.",
+    "paragraph2": "During the day, it is a lush green promenade; in the evening, as the Mekong sunset turns the sky golden, the park transforms into a vibrant night market and a hub for citizen recreation.",
+    "quote": "Here you can see the most authentic street life of Vientiane and the most beautiful sunset.",
+    "quoteAuthor": "a regular visitor",
+    "stats": [
+      {
+        "value": "2010",
+        "label": "Completed"
+      },
+      {
+        "value": "14 ha",
+        "label": "Area"
+      },
+      {
+        "value": "24 hours",
+        "label": "Open"
+      }
+    ],
+    "highlights": [
+      {
+        "tag": "👑",
+        "title": "King Anouvong Statue",
+        "desc": "The majestic bronze statue of King Anouvong is one of Vientiane's iconic landmarks."
+      },
+      {
+        "tag": "🌅",
+        "title": "Mekong Sunset",
+        "desc": "Stroll along the riverside path and watch the sunset glow over the wide Mekong River."
+      },
+      {
+        "tag": "🎪",
+        "title": "Vientiane Night Market",
+        "desc": "As night falls, the red-roofed tents next to the park connect into the largest night market in Vientiane."
+      }
+    ],
+    "editorTip": {
+      "tag": "Editor's tip",
+      "text": "Arrive around 17:30 to watch the sunset, then explore the night market for street food.",
+      "ctaLabel": "See full guide"
+    }
+  },
+  "eco": {
+    "label": "Riverbank & nature",
+    "heading": "Feel the breath of the Mekong",
+    "quote": "A mother river flowing endlessly — witnessing the city's sunsets and dawns.",
+    "intro": "Built along the Mekong River, Chao Anouvong Park is not only the city's flood embankment, but also a green space for citizens to get close to nature. The morning breeze and evening coolness make it an ideal place to escape the tropical heat.",
+    "microTitle": "Weather & the river",
+    "micro": [
+      {
+        "title": "Cool evenings",
+        "desc": "The river breeze after sunset is perfect for walking or jogging."
+      },
+      {
+        "title": "Wide riverbanks",
+        "desc": "In the dry season, large sandbars emerge; in the wet season, the river is full."
+      },
+      {
+        "title": "Shaded by trees",
+        "desc": "The park is planted with tropical trees, providing shade during the day."
+      }
+    ],
+    "plantsTitle": "Plants in the park",
+    "plants": [
+      {
+        "title": "Frangipani (Plumeria)",
+        "desc": "The national flower of Laos (Dok Champa), seen everywhere in the park.",
+        "items": [
+          {
+            "name": "White and yellow",
+            "desc": "Exuding a light, elegant fragrance"
+          }
+        ]
+      },
+      {
+        "title": "Tropical palms & lawns",
+        "desc": "Well-maintained green spaces, perfect for family picnics.",
+        "items": [
+          {
+            "name": "Shade trees",
+            "desc": "Providing shelter for visitors under the hot sun"
+          }
+        ]
+      }
+    ],
+    "wildlifeTitle": "What you might see",
+    "wildlife": [
+      "Birds returning to their nests in the evening",
+      "Children playing on the lawns",
+      "Locals doing aerobics",
+      "Travelers enjoying the river breeze"
+    ],
+    "lntTitle": "Leave No Trace",
+    "lntIntro": "Help keep the park clean and respect the local community's way of life.",
+    "lnt": [
+      "Put night market food packaging in the bins",
+      "Respect the solemnity of the King's statue",
+      "Do not throw trash into the Mekong River",
+      "Care for the park's plants and trees"
+    ],
+    "lntCheckHint": "Check off as you go — small actions keep the city park beautiful",
+    "checklist": {
+      "title": "Highlights by time",
+      "intro": "Scenery at different times of the day",
+      "items": [
+        {
+          "emoji": "🌅",
+          "name": "Stunning sunset",
+          "best": "17:30-18:30",
+          "rare": "Visible on clear days",
+          "rareClass": ""
+        },
+        {
+          "emoji": "🏃",
+          "name": "Morning exercise",
+          "best": "Around 06:00",
+          "rare": "Full of local life",
+          "rareClass": ""
+        },
+        {
+          "emoji": "🛍️",
+          "name": "Bustling night market",
+          "best": "After 18:00",
+          "rare": "Every evening",
+          "rareClass": ""
+        }
+      ]
+    }
+  },
+  "history": {
+    "label": "History & Culture",
+    "heading": "The Gaze of King Anouvong",
+    "intro": "The park's name and its central statue carry the deep memories of the Lao people's independence and dignity.",
+    "blocks": [
+      {
+        "title": "Who was Chao Anouvong?",
+        "text": "Chao Anouvong (1767–1829) was the last king of the Kingdom of Vientiane. In the early 19th century, he attempted to rebel against Siamese (Thai) rule and fight for Lao independence. Although he ultimately failed, he is regarded as a national hero by the Lao people."
+      },
+      {
+        "title": "Symbolism of the statue",
+        "text": "In the center of the park, the King's bronze statue stands 8 meters tall (14 meters with the base). Wearing a battle cloak, holding a sword in one hand, and pointing firmly towards Thailand across the river with the other, it symbolizes the determination to defend the territory."
+      },
+      {
+        "title": "Background of the park",
+        "text": "The park was inaugurated in 2010 to commemorate the 450th anniversary of the founding of Vientiane. It not only beautified the Mekong riverbank but also became an important venue for national celebrations and holiday gatherings."
+      },
+      {
+        "title": "The riverbank today",
+        "text": "The smoke of history has long dissipated, and today Chao Anouvong Park is a symbol of peace and prosperity. People walk, exercise, and enjoy food here, perfectly blending the weight of history with modern tranquility."
+      }
+    ],
+    "legend": {
+      "title": "Memory of a National Hero",
+      "text": "In the Lao historical narrative, Chao Anouvong is synonymous with courage. Locals often offer flowers and incense in front of the statue to express their reverence and remembrance for the King."
+    },
+    "didYouKnow": {
+      "title": "Did you know?",
+      "text": "This statue is one of the largest bronze statues in Laos. During specific festivals, grand ceremonies and commemorative events are held here, and the King's statue is surrounded by flowers."
+    },
+    "folklore": {
+      "title": "Riverside Life",
+      "tale": "For the citizens of Vientiane, the Mekong River is not only a natural boundary but also the center of life. The night river breeze takes away the heat of the day, and people gather here, continuing the riverside lifestyle passed down for generations.",
+      "shrineTitle": "A reminder of respect",
+      "shrine": "Please maintain proper respect near the King's statue. Do not make inappropriate gestures or climb the base."
+    },
+    "compare": {
+      "caption": "Drag the slider to compare the quiet day and bustling night",
+      "beforeLabel": "Daytime park",
+      "afterLabel": "Night market bustle"
+    },
+    "concrete": {
+      "title": "Modern landscape & history",
+      "text": "The park's design balances modern urban planning with historical commemoration. The open squares, clean paths, and majestic statues complement each other, providing a rare open view in the center of Vientiane."
+    },
+    "sisterQuote": {
+      "title": "A dialogue across the river",
+      "text": "Standing in the park, across the wide Mekong River is Nong Khai Province in Thailand. At night, the lights on both sides shine together, telling the long civilization nurtured by this great river."
+    }
+  },
+  "food": {
+    "label": "Food & Drink",
+    "heading": "Night market & street food",
+    "lead": "As the sun sets, the famous Vientiane Night Market next to the park and countless food stalls begin to awaken.",
+    "dishes": [
+      {
+        "tag": "🍹",
+        "name": "Fresh juice & smoothies",
+        "price": "~ 15,000 LAK",
+        "desc": "Fresh mango and dragon fruit smoothies, perfect for cooling down."
+      },
+      {
+        "tag": "🍡",
+        "name": "Lao BBQ skewers",
+        "price": "~ 10,000 LAK",
+        "desc": "Charcoal-grilled meat skewers, full of aroma."
+      },
+      {
+        "tag": "🥗",
+        "name": "Papaya salad",
+        "price": "~ 20,000 LAK",
+        "desc": "The classic Lao appetizer, spicy and refreshing."
+      },
+      {
+        "tag": "🥞",
+        "name": "Banana pancake",
+        "price": "~ 15,000 LAK",
+        "desc": "Sweet pancakes drizzled with condensed milk, loved by tourists."
+      }
+    ],
+    "quote": {
+      "text": "After walking the night market, buying a snack and sitting on the riverbank steps to enjoy the breeze—this is the Vientiane night.",
+      "author": "a regular visitor"
+    }
+  },
+  "gallery": {
+    "label": "Gallery",
+    "heading": "Moments in the park",
+    "intro": "A day in the park — from morning tranquility to a brilliant sunset.",
+    "historicalNote": "Images are illustrative of the park's atmosphere and vary with time and weather.",
+    "credits": "Images for reference and non-commercial use.",
+    "alts": [
+      "The majestic bronze statue of King Chao Anouvong",
+      "Brilliant sunset glow over the Mekong River",
+      "The red-roofed Vientiane Night Market at night",
+      "Visitors walking on the park promenade",
+      "Tree-shaded lawns along the riverbank",
+      "Close-up of the King's statue",
+      "Crowds doing aerobics on the square in the evening",
+      "Lights of Thailand across the river",
+      "Lao street food stalls in the night market",
+      "Blooming Dok Champa flowers",
+      "Relaxing benches in the park",
+      "Quiet surface of the Mekong River in the morning",
+      "Tourists taking photos in front of the statue"
+    ],
+    "viewLocation": "View on Google Maps"
+  },
+  "reviews": {
+    "label": "Reviews",
+    "heading": "What visitors say",
+    "intro": "A glance at recent visitor impressions (from public travel reviews).",
+    "disclaimer": "Based on public reviews · not an official endorsement",
+    "declaration": "Reviews compiled from independent travel platforms, for reference only",
+    "featured": [
+      {
+        "text": "The King's statue is magnificent, and the Mekong sunset is absolutely not to be missed!",
+        "source": "★ 5.0 · Traveler review"
+      },
+      {
+        "text": "Great for an evening stroll, the night market next to it is fun with lots of snacks.",
+        "source": "★ 5.0 · Visitor comment"
+      }
+    ],
+    "items": [
+      {
+        "text": "[Must see: Sunset] The view is very open and the sunset is beautiful.",
+        "rating": "5",
+        "name": "Ana",
+        "date": "March 2026"
+      },
+      {
+        "text": "[King's Statue] A very historic landmark, worth seeing.",
+        "rating": "5",
+        "name": "Tom",
+        "date": "February 2026"
+      },
+      {
+        "text": "[Night Market] The night market next to it is lively, you can buy lots of souvenirs.",
+        "rating": "4",
+        "name": "Lina",
+        "date": "January 2026"
+      },
+      {
+        "text": "[Relaxing Walk] The river breeze is very comfortable, lots of locals.",
+        "rating": "4",
+        "name": "Wei",
+        "date": "February 2026"
+      },
+      {
+        "text": "[Exercise] Lots of people dancing in the square at night, very energetic.",
+        "rating": "5",
+        "name": "Ken",
+        "date": "December 2025"
+      },
+      {
+        "text": "[Location] Right in the city center, very convenient transportation.",
+        "rating": "5",
+        "name": "Sora",
+        "date": "January 2026"
+      },
+      {
+        "text": "[Food] Night market snacks are cheap and delicious.",
+        "rating": "4",
+        "name": "Pim",
+        "date": "March 2026"
+      },
+      {
+        "text": "[Environment] The park is clean and well-landscaped.",
+        "rating": "4",
+        "name": "Dan",
+        "date": "February 2026"
+      }
+    ],
+    "viewLocation": "View on Google Maps"
+  },
+  "sources": {
+    "label": "Sources",
+    "heading": "Our references",
+    "intro": "This non-commercial guide compiles public info to help visitors plan responsibly.",
+    "photoTitle": "Photo sources",
+    "photoItems": [
+      {
+        "text": "Scenes shown are illustrative of Chao Anouvong Park",
+        "linkLabel": "View location",
+        "url": "https://maps.app.goo.gl/Zup1C9cs3wpiu2FSA"
+      }
+    ],
+    "factTitle": "Facts & figures",
+    "factText": "Ratings, hours, and coords compiled from public sources and subject to change — verify locally before visiting.",
+    "correctionTitle": "Spotted an error?",
+    "correctionText": "We are a small non-commercial team. If you see any errors or outdated info, let us know and we'll fix it.",
+    "correctionMailto": "mailto:n20186005@gmail.com",
+    "correctionCta": "Email us",
+    "copyright": "Chao Anouvong Park guide · non-commercial visitor resource"
+  },
+  "mapSection": {
+    "label": "Location & Map",
+    "heading": "Find Chao Anouvong Park",
+    "lead": "Located in the center of Vientiane, along the Mekong River, it is one of the city's most prominent landmarks.",
+    "stats": [
+      {
+        "tag": "Rating",
+        "value": "4.2 ★",
+        "sub": "from 6,873 reviews"
+      },
+      {
+        "tag": "Open",
+        "value": "24 hours",
+        "sub": "Open all day"
+      },
+      {
+        "tag": "Area",
+        "value": "City Center",
+        "sub": "Vientiane, Laos"
+      }
+    ],
+    "address": "Vientiane 01600 Laos",
+    "plusCode": "Plus Code XJ64+JW Vientiane",
+    "coords": "17.9616°N, 102.6073°E",
+    "iframeTitle": "Google Maps: Chao Anouvong Park, Vientiane, Laos"
+  },
+  "footer": {
+    "brand": {
+      "name": "Chao Anouvong Park",
+      "tagline": "Chao Anouvong Park · Vientiane"
+    },
+    "about": "A free, non-commercial visitor guide to Chao Anouvong Park — history, sunsets, and how to spend a relaxing evening here.",
+    "navTitle": "Explore",
+    "navItems": [
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "History",
+        "href": "#history"
+      },
+      {
+        "label": "Visitor guide",
+        "href": "#guide"
+      },
+      {
+        "label": "Nearby food",
+        "href": "#food"
+      },
+      {
+        "label": "Gallery",
+        "href": "#gallery"
+      },
+      {
+        "label": "Reviews",
+        "href": "#reviews"
+      },
+      {
+        "label": "Map",
+        "href": "#map"
+      }
+    ],
+    "noteTitle": "Please note",
+    "note": "We are not affiliated with any vendors in the park. Info may change — verify locally.",
+    "mapsLabel": "Google Maps →",
+    "sourcesTitle": "References",
+    "sourcesNote": "This guide links to public sources for verification.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings",
+    "disclaimerLead": "The Chao Anouvong Park guide is an independent, non-commercial resource — not an official site of any agency or business.",
+    "unofficial": "Not the official website of Tourism Laos or Vientiane City.",
+    "dataSource": "Weather data provided by Open-Meteo.",
+    "copyright": "© 2026 Chao Anouvong Park guide · non-commercial"
+  },
+  "guide": {
+    "label": "Visitor Guide",
+    "heading": "Visit Tips",
+    "lead": "Straightforward, useful advice for a relaxed evening at Chao Anouvong Park.",
+    "hours": {
+      "tag": "⏰ Hours",
+      "time": "Open 24 hours",
+      "items": [
+        {
+          "label": "Best time",
+          "value": "17:30 - 18:30"
+        },
+        {
+          "label": "Night market",
+          "value": "18:00 - 22:00"
+        }
+      ]
+    },
+    "fees": {
+      "tag": "🎟️ Fees",
+      "title": "Free Entry",
+      "items": [
+        {
+          "title": "Admission",
+          "desc": "Completely free public space"
+        }
+      ],
+      "note": "Public restrooms cost around 2,000-3,000 Kip"
+    },
+    "transport": {
+      "tag": "🚲 Transport",
+      "title": "Getting there",
+      "items": [
+        {
+          "title": "Walking",
+          "desc": "10-15 mins walk from city center"
+        },
+        {
+          "title": "Tuk-tuk",
+          "desc": "Tell the driver to go to the Mekong night market"
+        },
+        {
+          "title": "Bicycle",
+          "desc": "Cycling along the river is very pleasant"
+        }
+      ]
+    },
+    "hazeSeason": {
+      "tag": "🌫️ Haze Season",
+      "text": "Late dry season (Feb to April) may have agricultural burning haze, affecting sunset views."
+    },
+    "faqTitle": "FAQ",
+    "faqs": [
+      {
+        "q": "Is the park safe?",
+        "a": "Very safe, with many locals and tourists walking around at night."
+      }
+    ]
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        {
+          "h": "1. Information Collection",
+          "p": "This is a static site and does not actively collect personally identifiable information."
+        },
+        {
+          "h": "2. Cookies & Analytics",
+          "p": "We may use third-party anonymous analytics to understand site usage. These tools use cookies."
+        },
+        {
+          "h": "3. External Links",
+          "p": "This site contains links to third-party websites (like Google Maps). We are not responsible for their privacy policies."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        {
+          "h": "1. Acceptance of Terms",
+          "p": "By accessing this site, you agree to these terms."
+        },
+        {
+          "h": "2. Disclaimer",
+          "p": "Information is for reference only. We do not guarantee absolute accuracy due to changes in park conditions."
+        },
+        {
+          "h": "3. Intellectual Property",
+          "p": "Unless otherwise stated, content is copyrighted for non-commercial reference only."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie Settings",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        {
+          "h": "Manage Preferences",
+          "p": "You can disable cookies in your browser settings. Disabling cookies will not affect your ability to read the guide."
+        }
+      ]
+    }
+  }
+}
