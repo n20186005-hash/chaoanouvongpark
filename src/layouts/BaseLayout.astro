@@ -17,7 +17,7 @@ const faqs = (messages && messages.guide && messages.guide.faqs) ? messages.guid
 const jsonLd = [
   {
     '@context': 'https://schema.org',
-    '@type': 'TouristAttraction',
+    '@type': ['TouristAttraction', 'Park'],
     name: siteConfig.name[lang],
     description,
     image: `${siteConfig.domain}/gallery/${siteConfig.galleryPrefix}1.jpg`,
@@ -41,11 +41,13 @@ const jsonLd = [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '08:00',
-    closes: '17:00',
+    opens: '00:00',
+    closes: '24:00',
       },
     ],
     sameAs: siteConfig.sameAs,
+    isAccessibleForFree: true,
+    publicAccess: true,
   },
   {
     '@context': 'https://schema.org',

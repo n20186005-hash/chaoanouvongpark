@@ -18,9 +18,9 @@ const prefix = siteConfig.galleryPrefix;
     <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">{history.heading}</h2>
     <p class="mt-4 max-w-2xl text-ivory/80">{history.intro}</p>
 
-    <div class="mt-12 mb-16 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="mt-12 grid lg:grid-cols-2 gap-12 items-center">
       <div>
-        <Timeline items={history.blocks} />
+        <Timeline items={history.timeline} />
       </div>
       <div class="lg:sticky lg:top-24 self-start">
         <ImageCompare 
@@ -33,7 +33,36 @@ const prefix = siteConfig.galleryPrefix;
       </div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6 mt-6">
+    <!-- Historical narrative: hero-king, 1826, naga -->
+    <div class="mt-14 rounded-2xl bg-gradient-to-br from-gold/10 to-teak/40 border border-gold/30 p-6 md:p-10">
+      <p class="font-hand text-gold text-lg md:text-xl mb-1">{history.narrativeLabel}</p>
+      <div class="space-y-6 mt-4">
+        {history.narrative.map((n) => (
+          <div>
+            <h3 class="font-display text-xl md:text-2xl text-goldBright mb-2">{n.subtitle}</h3>
+            <p class="text-sm md:text-base text-ivory/85 leading-relaxed">{n.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- three cultural cards: statue gesture, naga, champa -->
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="rounded-2xl bg-teak/60 border border-gold/20 p-6">
+        <h3 class="font-display text-xl text-goldBright mb-2">{history.statue.title}</h3>
+        <p class="text-sm text-ivory/80 leading-relaxed">{history.statue.text}</p>
+      </div>
+      <div class="rounded-2xl bg-teak/60 border border-gold/20 p-6">
+        <h3 class="font-display text-xl text-goldBright mb-2">{history.naga.title}</h3>
+        <p class="text-sm text-ivory/80 leading-relaxed">{history.naga.text}</p>
+      </div>
+      <div class="rounded-2xl bg-teak/60 border border-gold/20 p-6">
+        <h3 class="font-display text-xl text-goldBright mb-2">{history.champa.title}</h3>
+        <p class="text-sm text-ivory/80 leading-relaxed">{history.champa.text}</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
       <div class="rounded-2xl bg-gold/10 border border-gold/30 p-6">
         <h3 class="font-display text-xl text-goldBright mb-2">{history.legend.title}</h3>
         <p class="text-sm text-ivory/80 leading-relaxed">{history.legend.text}</p>

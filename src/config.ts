@@ -1,6 +1,8 @@
 // 全局站点配置（Chao Anouvong Park / 昭阿奴翁公园 / ສວນເຈົ້າອະນຸວົງ）
 // 站点域名单一来源：Canonical / sitemap / JSON-LD / OG 全部引用 self.DOMAIN，避免硬编码错误地址
-const DOMAIN = 'https://chaoanouvongpark.com'; // TODO: Update domain if needed
+// 站点域名单一来源：Canonical / sitemap / JSON-LD / OG 全部引用 self.DOMAIN，避免硬编码错误地址。
+// 部署时可通过环境变量 CURRENT_SITE_DOMAIN 覆盖；默认即本站正确域名。
+const DOMAIN = (process.env.CURRENT_SITE_DOMAIN || 'https://chaoanouvongpark.com').replace(/\/$/, '');
 
 export const siteConfig = {
   // 景点名称（多语言）

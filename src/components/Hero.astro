@@ -65,6 +65,14 @@ const weatherMap = Object.fromEntries(
         )}
         <p class="mt-6 max-w-xl text-ivory/85 text-lg md:text-xl leading-relaxed">{hero.subtitle}</p>
 
+        {(hero.tags && hero.tags.length > 0) && (
+          <div class="mt-5 flex flex-wrap items-center gap-2.5">
+            {hero.tags.map((t) => (
+              <span class="chip text-ivory/90">{t.icon} {t.text}</span>
+            ))}
+          </div>
+        )}
+
         <div class="mt-7 flex flex-wrap items-center gap-3">
           <a href="#guide" class="inline-flex items-center gap-2 bg-gold text-teak font-semibold px-6 py-3 rounded-full hover:bg-goldBright transition-colors">
             {hero.cta1}
@@ -72,7 +80,15 @@ const weatherMap = Object.fromEntries(
           <a href="#food" class="inline-flex items-center gap-2 border border-gold/50 text-ivory px-6 py-3 rounded-full hover:border-goldBright hover:text-goldBright transition-colors">
             {hero.cta2}
           </a>
+          {hero.cta3 && (
+            <a href="#guide" class="inline-flex items-center gap-2 border border-gold/30 text-ivory/80 px-5 py-3 rounded-full hover:border-goldBright hover:text-goldBright transition-colors text-sm">
+              {hero.cta3}
+            </a>
+          )}
         </div>
+        {hero.cta3Note && (
+          <p class="mt-3 text-xs text-ivory/50">🎧 {hero.cta3Note}</p>
+        )}
 
         <!-- Coordinates · Google Maps · tags, as modern badge pills -->
         <div class="mt-8 flex flex-wrap items-center gap-2.5">

@@ -90,11 +90,18 @@ const guideImgs = [
       <div class="rounded-2xl border border-gold/30 bg-white/50 p-6">
         <span class="font-display text-gold text-2xl">{guide.transport.tag}</span>
         <h3 class="font-display text-xl text-teak mt-1 mb-3">{guide.transport.title}</h3>
-        <ul class="space-y-3 text-sm">
+        <ul class="space-y-4 text-sm">
           {guide.transport.items.map((it) => (
             <li>
               <div class="font-semibold text-teak">{it.title}</div>
               <div class="text-ink/70">{it.desc}</div>
+              {it.steps && it.steps.length > 0 && (
+                <ol class="mt-2 space-y-1.5 list-decimal list-inside text-ink/70 marker:text-gold">
+                  {it.steps.map((s) => (
+                    <li>{s}</li>
+                  ))}
+                </ol>
+              )}
             </li>
           ))}
         </ul>
@@ -237,9 +244,16 @@ const guideImgs = [
     <!-- FAQ -->
     <div class="mt-14 max-w-3xl">
       <h3 class="font-display text-2xl text-teak mb-5">{guide.faqTitle}</h3>
-      <div class="space-y-3">
+      {guide.faqCats && guide.faqCats.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-5" id="faq-filters">
+          {guide.faqCats.map((c) => (
+            <button type="button" class={`faq-filter${c.key === 'all' ? ' active' : ''}`} data-filter={c.key}>{c.label}</button>
+          ))}
+        </div>
+      )}
+      <div class="space-y-3" id="faq-list">
         {guide.faqs.map((f) => (
-          <details class="group rounded-xl border border-gold/25 bg-white/50 p-4 open:bg-teak/5">
+          <details class="group rounded-xl border border-gold/25 bg-white/50 p-4 open:bg-teak/5" data-cat={f.cat}>
             <summary class="cursor-pointer font-medium text-teak flex justify-between items-center">
               {f.q}
               <span class="text-gold transition-transform group-open:rotate-45">+</span>
@@ -249,6 +263,24 @@ const guideImgs = [
         ))}
       </div>
     </div>
+
+    <script>
+      (function () {
+        const filters = document.querySelectorAll('#faq-filters .faq-filter');
+        const items = document.querySelectorAll('#faq-list details');
+        filters.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const key = btn.getAttribute('data-filter');
+            filters.forEach((b) => b.classList.toggle('active', b === btn));
+            items.forEach((it) => {
+              const show = key === 'all' || it.getAttribute('data-cat') === key;
+              it.style.display = show ? '' : 'none';
+              if (!show) it.removeAttribute('open');
+            });
+          });
+        });
+      })();
+    </script>
 
     <!-- Nearby attractions -->
     {guide.nearby && (

@@ -21,6 +21,14 @@
     "slogan": "Gaze into history, feel the pulse of Vientiane by the Mekong.",
     "cta1": "Plan your visit",
     "cta2": "Getting there",
+    "tags": [
+      { "icon": "📍", "text": "Vientiane landmark" },
+      { "icon": "🌅", "text": "Best sunset viewpoint" },
+      { "icon": "🏛️", "text": "450th-anniversary monument" },
+      { "icon": "🆓", "text": "Free entry" }
+    ],
+    "cta3": "📥 Offline guide (PDF)",
+    "cta3Note": "Audio tour in production",
     "rating": "4.2",
     "reviewCount": "6,873",
     "viewLocation": "View on Google Maps",
@@ -181,59 +189,91 @@
     }
   },
   "history": {
-    "label": "History & Culture",
-    "heading": "The Gaze of King Anouvong",
-    "intro": "The park's name and its central statue carry the deep memories of the Lao people's independence and dignity.",
-    "blocks": [
+    "label": "History & Legends",
+    "heading": "The Gaze of King Chao Anouvong",
+    "intro": "The park's name and its central statue carry the Lao people's deep memory of independence and dignity.",
+    "timeline": [
       {
-        "title": "Who was Chao Anouvong?",
-        "text": "Chao Anouvong (1767–1829) was the last king of the Kingdom of Vientiane. In the early 19th century, he attempted to rebel against Siamese (Thai) rule and fight for Lao independence. Although he ultimately failed, he is regarded as a national hero by the Lao people."
+        "year": "1767",
+        "title": "Birth of a king",
+        "text": "Chao Anouvong is born in the Kingdom of Vientiane — the last crown prince who would later become its final king."
       },
       {
-        "title": "Symbolism of the statue",
-        "text": "In the center of the park, the King's bronze statue stands 8 meters tall (14 meters with the base). Wearing a battle cloak, holding a sword in one hand, and pointing firmly towards Thailand across the river with the other, it symbolizes the determination to defend the territory."
+        "year": "1826–1828",
+        "title": "The uprising against Siam",
+        "text": "He leads a revolt to reclaim Lao independence. Vientiane is devastated in the war, yet his defiance turns him into a national hero."
       },
       {
-        "title": "Background of the park",
-        "text": "The park was inaugurated in 2010 to commemorate the 450th anniversary of the founding of Vientiane. It not only beautified the Mekong riverbank but also became an important venue for national celebrations and holiday gatherings."
+        "year": "2010",
+        "title": "Park & bronze statue unveiled",
+        "text": "Completed for the 450th anniversary of Vientiane's founding: a 14-metre bronze statue of the king rises on the Mekong shore."
       },
       {
-        "title": "The riverbank today",
-        "text": "The smoke of history has long dissipated, and today Chao Anouvong Park is a symbol of peace and prosperity. People walk, exercise, and enjoy food here, perfectly blending the weight of history with modern tranquility."
+        "year": "Today",
+        "title": "Heart of the riverside city",
+        "text": "A symbol of Vientiane and the living centre of riverside civic life — where history and daily life meet."
       }
     ],
+    "narrativeLabel": "History & the Hero's Legend",
+    "narrative": [
+      {
+        "subtitle": "The hero-king who gazes at the great river",
+        "text": "At the centre of the park stands the bronze statue of King Chao Anouvong, 8 metres tall (14 metres including its base). In armour, his right hand grips a sword while his left hand points firmly across the Mekong toward Thailand. Chao Anouvong (1767–1829) was the last ruler of the Vientiane Kingdom and a symbol of Lao independence and dignity."
+      },
+      {
+        "subtitle": "The final echo of 1826",
+        "text": "In the early 19th century, Laos was under Siamese (Thai) control. In 1826, King Chao Anouvong launched a struggle for national independence. Though the uprising failed against overwhelming odds and the old city of Vientiane was destroyed, his spirit of defending his homeland's honour made him an eternal hero in the Lao people's hearts."
+      },
+      {
+        "subtitle": "The naga and the guardian of the river",
+        "text": "In Lao belief, the Mekong is not only a life-giving mother river but also the home of the Phaya Naga — a mythical dragon. Local legend holds that the king's statue stands guard on the bank alongside the naga, blessing Vientiane with peace and prosperity. On traditional festivals such as Boun Lai Heua Fai (the end-of-lent river festival), tens of thousands of citizens gather along the park's riverfront to float thousands of flower lanterns, carrying reverence for history and wishes for the future."
+      }
+    ],
+    "statue": {
+      "title": "The king's gaze and gesture",
+      "text": "One hand rests a sword at his side; the other reaches toward the opposite bank (Nong Khai, Thailand). In local lore this gesture is both a declaration of Laos's former territory and dignity, and a blessing upon those who come after."
+    },
+    "naga": {
+      "title": "The Mekong dragon (Phaya Naga)",
+      "text": "Lao folklore is intertwined with the naga of the Mekong. Locals believe a dragon dwells at the riverbed beneath the park, protecting the land. Each year during Boun Lai Heua Fai, citizens float lanterns and hold boat races by the river to honour the river spirit and the naga."
+    },
+    "champa": {
+      "title": "The Champa flower (Dok Champa)",
+      "text": "Beyond the frangipani in the garden, the Dok Champa — Laos's national flower — symbolises purity, devotion and the gentle hospitality of the Lao people. Offerings of marigold or champa garlands at the statue's base are a quiet way to pay respect."
+    },
     "legend": {
-      "title": "Memory of a National Hero",
-      "text": "In the Lao historical narrative, Chao Anouvong is synonymous with courage. Locals often offer flowers and incense in front of the statue to express their reverence and remembrance for the King."
+      "title": "Memory of a national hero",
+      "text": "In Lao historical narrative, Chao Anouvong is synonymous with courage. Locals often lay flowers and incense before the statue to express respect and remembrance."
     },
     "didYouKnow": {
       "title": "Did you know?",
-      "text": "This statue is one of the largest bronze statues in Laos. During specific festivals, grand ceremonies and commemorative events are held here, and the King's statue is surrounded by flowers."
+      "text": "This is one of the largest bronze statues in Laos. On special occasions the base is surrounded by flowers during grand commemorations."
     },
     "folklore": {
-      "title": "Riverside Life",
-      "tale": "For the citizens of Vientiane, the Mekong River is not only a natural boundary but also the center of life. The night river breeze takes away the heat of the day, and people gather here, continuing the riverside lifestyle passed down for generations.",
-      "shrineTitle": "A reminder of respect",
-      "shrine": "Please maintain proper respect near the King's statue. Do not make inappropriate gestures or climb the base."
+      "title": "Life by the river",
+      "tale": "For Vientiane residents, the Mekong is both a natural border and the centre of life. Evening river breezes carry away the day's heat as people gather, continuing a riverside way of life passed down through generations.",
+      "shrineTitle": "A note on respect",
+      "shrine": "Near the king's statue, please keep an appropriate reverence — no disrespectful gestures or climbing the base."
     },
     "compare": {
-      "caption": "Drag the slider to compare the quiet day and bustling night",
-      "beforeLabel": "Daytime park",
-      "afterLabel": "Night market bustle"
+      "caption": "Drag the slider to compare the calm of day with the bustle of the night market",
+      "beforeLabel": "The park by day",
+      "afterLabel": "The night-market buzz"
     },
     "concrete": {
-      "title": "Modern landscape & history",
-      "text": "The park's design balances modern urban planning with historical commemoration. The open squares, clean paths, and majestic statues complement each other, providing a rare open view in the center of Vientiane."
+      "title": "Modern landscape, historic depth",
+      "text": "The park's design balances modern urban planning with historical commemoration. Open plazas, tidy paths and the stately statue together give Vientiane's centre a rare sense of openness."
     },
     "sisterQuote": {
-      "title": "A dialogue across the river",
-      "text": "Standing in the park, across the wide Mekong River is Nong Khai Province in Thailand. At night, the lights on both sides shine together, telling the long civilization nurtured by this great river."
+      "title": "A conversation across one river",
+      "text": "Standing in the park, across the broad Mekong lies Thailand's Nong Khai province. At night, the lights of both banks mirror each other, telling of the ancient civilisation nurtured by this great river."
     }
   },
   "food": {
     "label": "Food & Drink",
     "heading": "Night market & street food",
     "lead": "As the sun sets, the famous Vientiane Night Market next to the park and countless food stalls begin to awaken.",
+    "priceNote": "Note: local prices may shift slightly with the Lao kip (LAK) exchange rate. The prices above are about 0.5–1.0 USD and are for reference only.",
     "dishes": [
       {
         "tag": "🍹",
@@ -272,19 +312,19 @@
     "historicalNote": "Images are illustrative of the park's atmosphere and vary with time and weather.",
     "credits": "Images for reference and non-commercial use.",
     "alts": [
-      "The majestic bronze statue of King Chao Anouvong",
-      "Brilliant sunset glow over the Mekong River",
-      "The red-roofed Vientiane Night Market at night",
-      "Visitors walking on the park promenade",
-      "Tree-shaded lawns along the riverbank",
-      "Close-up of the King's statue",
-      "Crowds doing aerobics on the square in the evening",
-      "Lights of Thailand across the river",
-      "Lao street food stalls in the night market",
-      "Blooming Dok Champa flowers",
-      "Relaxing benches in the park",
-      "Quiet surface of the Mekong River in the morning",
-      "Tourists taking photos in front of the statue"
+      "Chao Anouvong King Statue at Vientiane riverside at sunset",
+      "Bronze statue of King Chao Anouvong in Chao Anouvong Park, Vientiane",
+      "Mekong River sunset viewed from Chao Anouvong Park, Vientiane",
+      "Vientiane Night Market food stalls beside Chao Anouvong Park",
+      "Lao street food and grilled skewers at the Vientiane night market",
+      "Locals dancing and exercising at Chao Anouvong Park in the evening",
+      "Chao Anouvong Park by day, calm riverside green space",
+      "Mekong River and Thai shore across from Chao Anouvong Park",
+      "Flower lanterns floating on the Mekong during Boun Lai Heua Fai",
+      "Dok Champa (frangipani), Laos national flower, in the park garden",
+      "Vientiane riverside promenade at blue hour near the king statue",
+      "Chao Anouvong Park panorama with the Mekong and city skyline",
+      "Night market buzz and glowing stalls at Chao Anouvong Park after dark"
     ],
     "viewLocation": "View on Google Maps"
   },
@@ -496,6 +536,17 @@
         {
           "title": "Bicycle",
           "desc": "Cycling along the river is very pleasant"
+        },
+        {
+          "title": "✈️ Airport to the park (Wattay Intl. VTE)",
+          "desc": "Wattay International Airport is about 3–5 km away, roughly 15–25 min by car. Step-by-step:",
+          "steps": [
+            "After baggage claim, exit the arrivals hall and look for the bright-yellow LOCA / InDrive taxi point outside the terminal, or connect to airport Wi-Fi and book via the app.",
+            "In the app, or tell the driver the destination: Chao Anouvong Park (riverside, Mekong).",
+            "Alternatively, buy a fixed-fare ticket at the taxi counter in the arrivals hall — about 150,000 Kip, assigned to a licensed taxi.",
+            "The car goes via Route 13 or the city centre to Fa Ngum Road; get off at the park entrance and walk straight to the statue and riverside promenade.",
+            "Fare guide: app ride about 60,000–120,000 Kip; avoid unmetered tuk-tuks to prevent overcharging. After 17:30 the riverside gets congested, so allow extra time."
+          ]
         }
       ]
     },
@@ -503,12 +554,76 @@
       "tag": "🌫️ Haze Season",
       "text": "Late dry season (Feb to April) may have agricultural burning haze, affecting sunset views."
     },
+    "photography": {
+      "title": "Photography & Viewpoints",
+      "intro": "Two easy vantage points for postcard shots of the park and the Mekong.",
+      "timesTitle": "Best light windows",
+      "times": [
+        {
+          "period": "Golden hour · 17:30–18:00",
+          "desc": "Warm, low-angle light rakes across the statue."
+        },
+        {
+          "period": "Sunset · ~18:25",
+          "desc": "The king is rimmed with gold and the river glows."
+        },
+        {
+          "period": "Blue hour · 18:45–19:15",
+          "desc": "Both banks light up — ideal for long exposures."
+        }
+      ],
+      "spotsTitle": "Best photo spots",
+      "spots": [
+        {
+          "name": "Spot 1 · 45° front of the statue",
+          "view": "Shoot into the low sun for the king's silhouette with a golden rim.",
+          "tip": "Use a telephoto to compress and avoid the crowds."
+        },
+        {
+          "name": "Spot 2 · riverside steps",
+          "view": "Frame Nong Khai's afterglow and its reflection on the water.",
+          "tip": "Get low to the water for a clean mirror reflection."
+        }
+      ],
+      "settingsTitle": "Camera / phone settings",
+      "settings": [
+        {
+          "style": "Silhouette (statue)",
+          "camera": "Spot-meter the sky, underexpose ~1 stop.",
+          "phone": "Enable HDR; tap the sky to focus and drag exposure down."
+        },
+        {
+          "style": "Blue-hour night",
+          "camera": "Tripod + f/8 + 2s exposure.",
+          "phone": "Pro mode ISO 100 long exposure, or Night mode."
+        }
+      ],
+      "tipsTitle": "Quick tips",
+      "tips": [
+        "Arrive 30 minutes early to claim a spot.",
+        "A small travel tripod helps with blue-hour long exposures.",
+        "Respect the statue — never climb the railing for a shot."
+      ]
+    },
     "faqTitle": "FAQ",
+    "faqCats": [
+      { "key": "all", "label": "All" },
+      { "key": "transport", "label": "Getting there" },
+      { "key": "market", "label": "Market & money" },
+      { "key": "culture", "label": "History & etiquette" }
+    ],
     "faqs": [
-      {
-        "q": "Is the park safe?",
-        "a": "Very safe, with many locals and tourists walking around at night."
-      }
+      { "cat": "market", "q": "Is there an entrance fee?", "a": "The park is a fully open public green space with no ticket — free and open 24 hours a day." },
+      { "cat": "transport", "q": "How long should I plan to visit?", "a": "Allow 1.5–3 hours: ~30 min at the statue and riverside walk, ~30 min watching the Mekong sunset from the steps, and 1–2 hours at the night market for food and crafts." },
+      { "cat": "market", "q": "Are there toilets or luggage storage?", "a": "Public toilets are available in the park and around the night market, costing about 2,000–3,000 Lao kip (bring small change and tissues). There is no luggage storage inside the park — leave large bags at your hotel or use a nearby café's service." },
+      { "cat": "transport", "q": "How do I get to the park?", "a": "It sits on the Mekong in central Vientiane. Walk 10–15 min from the city centre; use the LOCA or InDrive apps (set destination to Chao Anouvong Park); or take a tuk-tuk and show the driver 'Night Market' / 'Chao Anouvong Statue'." },
+      { "cat": "transport", "q": "Can I drive and park nearby?", "a": "After 17:30 the riverside Fa Ngum Road gets very congested — four-wheel parking is not advised. Bikes/motorbikes can use marked roadside bays (a small fee of about 5,000 kip may apply)." },
+      { "cat": "market", "q": "What payment is accepted at the night market?", "a": "Most stalls are cash only. Carry Lao kip (LAK); some accept Thai baht (THB) or US dollars but change is given in kip at a loss. Local apps like BCEL One work at a few shops, but cards are rarely usable at stalls." },
+      { "cat": "market", "q": "Is the street food safe?", "a": "The night market is generally clean. If you have a sensitive stomach: choose hot, freshly grilled or boiled items; be cautious with raw seafood or cut fruit; ask for 'no ice' in drinks." },
+      { "cat": "culture", "q": "How should I behave at the statue?", "a": "The king is a sacred national hero. Dress modestly (no beachwear), never climb the base or railing, and avoid playful or disrespectful gestures. You may lay marigold or champa garlands at the offering altar." },
+      { "cat": "culture", "q": "Can I fly a drone?", "a": "Not recommended without permission. The park borders the Mekong international boundary (Thailand opposite) and lies near government and diplomatic areas — an unauthorised drone risks confiscation or a heavy fine." },
+      { "cat": "culture", "q": "Is the park safe at night?", "a": "Very safe. Vientiane is peaceful and the park is well lit, with many local families around. Still, watch your bag, phone and wallet in crowds." },
+      { "cat": "culture", "q": "What about the haze season?", "a": "From Feb to Apr (late dry season) agricultural burning can raise the AQI and haze the sky, so sunsets may glow red rather than golden. Consider a mask if you are sensitive." }
     ]
   },
   "legal": {

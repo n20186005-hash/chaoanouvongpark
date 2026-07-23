@@ -30,6 +30,9 @@ const foodImg = `/gallery/${siteConfig.galleryPrefix}5.jpg`;
           </div>
         ))}
       </div>
+      {food.priceNote && (
+        <p class="mt-4 text-xs text-ivory/55 leading-relaxed">{food.priceNote}</p>
+      )}
       <div class="photo-frame rounded-2xl min-h-[280px]">
         <img src={foodImg} alt={food.heading} class="w-full h-full object-cover" />
       </div>
