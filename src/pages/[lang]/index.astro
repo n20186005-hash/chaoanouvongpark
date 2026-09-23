@@ -12,6 +12,12 @@ import History from '../../components/History.astro';
 import Gallery from '../../components/Gallery.astro';
 import Reviews from '../../components/Reviews.astro';
 import MapSection from '../../components/MapSection.astro';
+import WeatherSection from '../../components/WeatherSection.astro';
+import TransportSection from '../../components/TransportSection.astro';
+import FacilitiesSection from '../../components/FacilitiesSection.astro';
+import SeasonalStrategy from '../../components/SeasonalStrategy.astro';
+import Itineraries from '../../components/Itineraries.astro';
+import Responsibility from '../../components/Responsibility.astro';
 import Footer from '../../components/Footer.astro';
 import { getI18n } from '../../i18n/ui';
 
@@ -26,6 +32,7 @@ const { lang, messages } = await getI18n(Astro.url);
   <Header lang={lang} messages={messages} />
   <main>
     <Hero lang={lang} messages={messages} />
+    <WeatherSection messages={messages} lang={lang} />
     <About messages={messages} />
     <Guide messages={messages} />
     <History messages={messages} />
@@ -34,6 +41,11 @@ const { lang, messages } = await getI18n(Astro.url);
     <Gallery messages={messages} />
     <Reviews messages={messages} />
     <Sources messages={messages} />
+    <TransportSection messages={messages} lang={lang} />
+    <FacilitiesSection messages={messages} lang={lang} />
+    <SeasonalStrategy messages={messages} lang={lang} />
+    <Itineraries messages={messages} lang={lang} />
+    <Responsibility messages={messages} lang={lang} />
     <MapSection lang={lang} messages={messages} />
   </main>
   <Footer lang={lang} messages={messages} />

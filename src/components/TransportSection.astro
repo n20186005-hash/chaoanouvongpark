@@ -1,0 +1,37 @@
+---
+import type { Lang } from '../i18n/ui';
+
+interface Props { messages: any; lang: Lang; }
+const { messages } = Astro.props;
+const t = messages.transport;
+---
+
+<section id="transport" class="bg-teakDeep py-20 text-ivory">
+  <div class="mx-auto max-w-7xl px-5">
+    <p class="font-hand text-2xl text-gold">{t.label}</p>
+    <h2 class="mt-1 font-display text-3xl font-bold md:text-4xl">{t.heading}</h2>
+    <p class="mt-3 max-w-2xl text-ivory/70">{t.lead}</p>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      {t.modes.map((m: any) => (
+        <article class="rounded-2xl border border-ivory/15 bg-ivory/5 p-6">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">{m.icon}</span>
+            <h3 class="font-display text-xl font-semibold">{m.name}</h3>
+          </div>
+          <p class="mt-2 text-ivory/70">{m.desc}</p>
+          <ol class="mt-3 space-y-2 text-sm text-ivory/80">
+            {m.steps.map((s: string) => (
+              <li class="flex gap-2">
+                <span class="mt-1 text-gold">›</span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ol>
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-8 rounded-xl border border-gold/30 bg-gold/10 p-4 text-sm text-gold">{t.tip}</p>
+  </div>
+</section>

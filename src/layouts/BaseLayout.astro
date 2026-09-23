@@ -18,13 +18,25 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': ['TouristAttraction', 'Park'],
+    '@id': `${siteConfig.domain}/#attraction`,
     name: siteConfig.name[lang],
+    alternateName: [
+      ...languagesList.filter((l) => l !== lang).map((l) => siteConfig.name[l]),
+      siteConfig.shortName,
+      `${siteConfig.city} ${siteConfig.name.en}`,
+    ].filter((v, i, a) => a.indexOf(v) === i),
     description,
-    image: `${siteConfig.domain}/gallery/${siteConfig.galleryPrefix}1.jpg`,
+    image: [`${siteConfig.domain}/gallery/${siteConfig.galleryPrefix}1.jpg`],
     url: canonical,
+    isAccessibleForFree: true,
+    publicAccess: true,
+    hasMap: siteConfig.mapsUrl,
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address,
+      addressLocality: siteConfig.city,
+      addressRegion: siteConfig.stateProvince,
+      postalCode: siteConfig.postalCode,
       addressCountry: 'LA',
     },
     geo: {
@@ -46,8 +58,6 @@ const jsonLd = [
       },
     ],
     sameAs: siteConfig.sameAs,
-    isAccessibleForFree: true,
-    publicAccess: true,
   },
   {
     '@context': 'https://schema.org',
@@ -71,12 +81,17 @@ const jsonLd = [
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.siteName[lang]} />
     <meta property="og:locale" content={htmlLang[lang]} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteConfig.domain}/gallery/${siteConfig.galleryPrefix}1.jpg`} />
+    <meta property="og:image:alt" content={`${siteConfig.name[lang]} — ${siteConfig.city}, ${siteConfig.country}`} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1f1a17" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     {languagesList.map((l) => (
       <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/`} />
     ))}
@@ -101,5 +116,13 @@ const jsonLd = [
   </head>
   <body class="grain">
     <slot />
+
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>

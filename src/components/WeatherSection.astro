@@ -1,0 +1,265 @@
+---
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  messages: any;
+  lang: Lang;
+}
+const { messages, lang } = Astro.props;
+const weather = messages.weather;
+const LAT = '17.9675';
+const LON = '102.6120';
+---
+
+<section id="weather" class="bg-ivory py-20">
+  <div class="mx-auto max-w-7xl px-5">
+    <p class="font-hand text-2xl text-gold">{weather.label}</p>
+    <h2 class="mt-1 font-display text-3xl font-bold text-ink md:text-4xl">{weather.heading}</h2>
+    <p class="mt-3 max-w-2xl text-ink/70">{weather.lead}</p>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      <!-- Current conditions card -->
+      <article class="lg:col-span-1 rounded-2xl border border-teak/15 bg-white p-6 shadow-sm">
+        <h3 class="font-display text-lg font-semibold text-teak">{weather.cardTitle}</h3>
+        <div id="wx-now" class="mt-3 text-ink/70">{weather.loading}</div>
+      </article>
+
+      <!-- Advice engine -->
+      <article class="lg:col-span-2 rounded-2xl border border-teak/15 bg-white p-6 shadow-sm">
+        <h3 class="font-display text-lg font-semibold text-teak">{weather.adviceTitle}</h3>
+        <div id="wx-risk" class="mt-3"></div>
+        <div class="mt-3 grid gap-5 sm:grid-cols-3">
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-wide text-gold">{weather.outfitTitle}</h4>
+            <ul id="wx-outfit" class="mt-2 space-y-1 text-sm text-ink/80"></ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-wide text-gold">{weather.planTitle}</h4>
+            <ul id="wx-plan" class="mt-2 space-y-1 text-sm text-ink/80"></ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-wide text-gold">{weather.itemsTitle}</h4>
+            <ul id="wx-items" class="mt-2 space-y-1 text-sm text-ink/80"></ul>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- 7-day forecast -->
+    <div class="mt-8">
+      <h3 class="font-display text-lg font-semibold text-teak">{weather.forecast}</h3>
+      <div id="wx-forecast" class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4 md:grid-cols-7">
+        <p class="col-span-full text-ink/60">{weather.loading}</p>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ lang, w: weather, lat: LAT, lon: LON }}>
+    const L = lang;
+    const W = w;
+
+    // ---- Weather-code dictionary (icon + short text) ----
+    const WMO = {
+      en: {0:['☀️','Clear'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:['🌫️','Fog'],48:['🌫️','Rime fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌧️','Dense drizzle'],56:['🌧️','Freezing drizzle'],57:['🌧️','Freezing drizzle'],61:['🌦️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['🌨️','Heavy snow'],77:['🌨️','Snow grains'],80:['🌦️','Rain showers'],81:['🌧️','Rain showers'],82:['🌧️','Violent showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm'],99:['⛈️','Thunderstorm']},
+      zh: {0:['☀️','晴'],1:['🌤️','晴间多云'],2:['⛅','多云'],3:['☁️','阴'],45:['🌫️','雾'],48:['🌫️','雾凇'],51:['🌦️','小毛毛雨'],53:['🌦️','毛毛雨'],55:['🌧️','浓毛毛雨'],56:['🌧️','冻毛毛雨'],57:['🌧️','冻毛毛雨'],61:['🌦️','小雨'],63:['🌧️','中雨'],65:['🌧️','大雨'],66:['🌧️','冻雨'],67:['🌧️','冻雨'],71:['🌨️','小雪'],73:['🌨️','雪'],75:['🌨️','大雪'],77:['🌨️','米雪'],80:['🌦️','阵雨'],81:['🌧️','阵雨'],82:['🌧️','强阵雨'],85:['🌨️','阵雪'],86:['🌨️','阵雪'],95:['⛈️','雷阵雨'],96:['⛈️','雷阵雨'],99:['⛈️','强雷暴']},
+      lo: {0:['☀️','ໂລ່ງ'],1:['🌤️','ສວ່ງໂລ່ງ'],2:['⛅','ຂວັນບາງສ່ວນ'],3:['☁️','ຂວັນ'],45:['🌫️','ມອງ'],48:['🌫️','ມອງແຂັງ'],51:['🌦️','ຝົນຝອຍ'],53:['🌦️','ຝົນຝອຍ'],55:['🌧️','ຝົນຝອຍໜັກ'],56:['🌧️','ຝົນແຂ້ງ'],57:['🌧️','ຝົນແຂ້ງ'],61:['🌦️','ຝົນເລັກນ້ອຍ'],63:['🌧️','ຝົນປານກາງ'],65:['🌧️','ຝົນຫຼັງ'],66:['🌧️','ຝົນແຂ້ງ'],67:['🌧️','ຝົນແຂ້ງ'],71:['🌨️','ຫິມະ'],73:['🌨️','ຫິມະ'],75:['🌨️','ຫິມະໜັກ'],77:['🌨️','ເມັດຫິມະ'],80:['🌦️','ຝົນຕົກເປັນຊ່ວງ'],81:['🌧️','ຝົນຕົກເປັນຊ່ວງ'],82:['🌧️','ຝົນຕົກແຮງ'],85:['🌨️','ຫິມະ'],86:['🌨️','ຫິມະ'],95:['⛈️','ພາຍຸ'],96:['⛈️','ພາຍຸ'],99:['⛈️','ພາຍຸແຮງ']}
+    };
+    function wx(code){ const m = (WMO[L] && WMO[L][code]) || WMO.en[code] || ['🌡️','—']; return { icon: m[0], text: m[1] }; }
+
+    function uvLabel(uv){
+      const lvl = uv < 3 ? 'low' : uv < 6 ? 'mod' : uv < 8 ? 'high' : uv < 11 ? 'vhigh' : 'ext';
+      const map = {
+        en: { low:'Low', mod:'Moderate', high:'High', vhigh:'Very High', ext:'Extreme' },
+        zh: { low:'低', mod:'中等', high:'高', vhigh:'很高', ext:'极高' },
+        lo: { low:'ຕ່ຳ', mod:'ປານກາງ', high:'ສູງ', vhigh:'ສູງຫຼາຍ', ext:'ສູງສຸດ' }
+      };
+      return (map[L] && map[L][lvl]) + ' ' + Math.round(uv);
+    }
+    function beaufort(kmh){ const t=[1,6,12,20,29,39,50,62,75,89,103,118,133]; let b=0; for(; b<t.length; b++){ if(kmh < t[b]) return b; } return 12; }
+    function windLabel(kmh){
+      const b = beaufort(kmh);
+      const wd = {
+        en:['Calm','Light','Light breeze','Gentle','Moderate','Fresh','Strong','Near gale','Gale','Strong gale','Storm','Violent','Hurricane'],
+        zh:['无风','微风','轻风','清风','和风','清劲','强风','疾风','大风','烈风','狂风','暴风','飓风'],
+        lo:['ສະຫງັບ','ລົມອ່ອນ','ລົມເບົາ','ລົມສະຫງັບ','ລົມປານກາງ','ລົມແຮງປານກາງ','ລົມແຮງ','ລົມແຮງຫຼາຍ','ລົມໃຫຍ່','ພະລັງລົມໃຫຍ່','ພະຍຸ','ພະຍຸແຮງ','ໄຕຝຸ່ນ']
+      };
+      return ((wd[L] && wd[L][b]) || wd.en[b]) + ' (Bft ' + b + ', ' + Math.round(kmh) + ' km/h)';
+    }
+
+    // ---- Advice engine: derive actionable tips from weather ----
+    function buildAdvice(d){
+      const code = d.code, tmax = d.tmax, tmin = d.tmin, wind = d.wind, uv = d.uv, pop = d.pop;
+      const isThunder = code >= 95;
+      const isHeavyRain = (code >= 65 && code <= 82) || code === 99;
+      const isLightRain = (code >= 51 && code <= 67) || (code >= 80 && code <= 82);
+      const isFog = code === 45 || code === 48;
+      const isClear = code === 0 || code === 1;
+      const isCloudy = code === 2 || code === 3 || isFog;
+      const bft = beaufort(wind);
+      const P = W.phrases;
+      const outfit = [], plan = [], items = [], risk = [];
+
+      if (isThunder) risk.push(P.r_thunder);
+      if (isHeavyRain) risk.push(P.r_heavyrain);
+      if (bft >= 7) risk.push(P.r_wind);
+      if (isFog) risk.push(P.r_fog);
+
+      if (tmax >= 32 && uv >= 5) outfit.push(P.o_hot);
+      else if (tmin <= 10) outfit.push(P.o_cold);
+      else if ((tmax - tmin) >= 8) outfit.push(P.o_cool);
+      else if (isHeavyRain || (isLightRain && bft >= 5)) outfit.push(P.o_rain);
+      else outfit.push(P.o_normal);
+
+      if (isThunder || isHeavyRain) plan.push(P.p_thunder);
+      else if (isLightRain) plan.push(P.p_rain_light);
+      else if (bft >= 5) plan.push(P.p_wind);
+      if (tmax >= 32) plan.push(P.p_hot);
+      else if (isClear) plan.push(P.p_sunny);
+      else if (isCloudy) plan.push(P.p_cloudy);
+
+      if (pop >= 60 || isThunder || isHeavyRain || isLightRain) {
+        items.push(bft >= 5 ? P.i_raincoat : P.i_umbrella);
+      }
+      if (uv >= 5 || tmax >= 32) items.push(P.i_sunscreen);
+      if (tmax >= 32) items.push(P.i_water);
+      if ((tmax - tmin) >= 8) items.push(P.i_jacket);
+      if (tmin <= 10) items.push(P.i_warm);
+
+      return { outfit, plan, items, risk };
+    }
+
+    function li(text){ const e = document.createElement('li'); e.textContent = text; return e; }
+
+    function renderNow(c, d){
+      const now = document.getElementById('wx-now');
+      if (!now) return;
+      const cur = wx(c.code);
+      now.innerHTML = '';
+      const big = document.createElement('div');
+      big.className = 'flex items-center gap-3';
+      big.innerHTML = '<span class="text-4xl">' + cur.icon + '</span><span class="font-display text-4xl font-bold text-ink">' + Math.round(c.temp) + '°</span>';
+      now.appendChild(big);
+      const txt = document.createElement('p'); txt.className = 'mt-1 text-ink/80'; txt.textContent = cur.text;
+      now.appendChild(txt);
+      const grid = document.createElement('div'); grid.className = 'mt-4 grid grid-cols-2 gap-y-1 text-sm text-ink/70';
+      const uvWord = ({ en: 'UV', zh: '紫外线', lo: 'UV' })[L] || 'UV';
+      const rows = [
+        [W.feelsLike, Math.round(c.feels) + '°'],
+        [W.humidity, Math.round(c.humidity) + '%'],
+        [W.wind, windLabel(c.wind)],
+        [W.chanceOfRain, Math.round(d.pop) + '%'],
+        [uvWord, uvLabel(c.uv)]
+      ];
+      rows.forEach(r => {
+        const p = document.createElement('div'); p.textContent = r[0] + ': ' + r[1];
+        grid.appendChild(p);
+      });
+      now.appendChild(grid);
+      const up = document.createElement('p'); up.className = 'mt-3 text-xs text-ink/50';
+      up.textContent = W.updated + ' ' + new Date().toLocaleTimeString(L === 'zh' ? 'zh-CN' : L === 'lo' ? 'lo-LA' : 'en-US');
+      now.appendChild(up);
+    }
+
+    function renderAdvice(d){
+      const a = buildAdvice(d);
+      const risk = document.getElementById('wx-risk');
+      risk.innerHTML = '';
+      if (a.risk.length){
+        const box = document.createElement('div');
+        box.className = 'rounded-xl border border-red-300 bg-red-50 p-3 text-sm text-red-700';
+        a.risk.forEach(t => { const p = document.createElement('p'); p.className = 'font-medium'; p.textContent = t; box.appendChild(p); });
+        risk.appendChild(box);
+      } else {
+        const p = document.createElement('p'); p.className = 'text-sm text-ink/50'; p.textContent = W.noRisk;
+        risk.appendChild(p);
+      }
+      const fill = (id, arr) => {
+        const ul = document.getElementById(id); ul.innerHTML = '';
+        if (!arr.length){ const e = document.createElement('li'); e.className = 'text-ink/40'; e.textContent = '—'; ul.appendChild(e); }
+        arr.forEach(t => ul.appendChild(li(t)));
+      };
+      fill('wx-outfit', a.outfit);
+      fill('wx-plan', a.plan);
+      fill('wx-items', a.items);
+    }
+
+    function renderForecast(daily){
+      const box = document.getElementById('wx-forecast');
+      if (!box) return;
+      box.innerHTML = '';
+      const loc = L === 'zh' ? 'zh-CN' : L === 'lo' ? 'lo-LA' : 'en-US';
+      daily.forEach(day => {
+        const c = wx(day.code);
+        const el = document.createElement('div');
+        el.className = 'rounded-xl border border-teak/10 bg-ivory p-3 text-center';
+        const dt = new Date(day.date + 'T00:00:00');
+        const name = day.date === daily[0].date ? W.today : dt.toLocaleDateString(loc, { weekday: 'short' });
+        el.innerHTML =
+          '<p class="text-xs font-medium text-ink/60">' + name + '</p>' +
+          '<p class="my-1 text-2xl">' + c.icon + '</p>' +
+          '<p class="text-sm text-ink/80">' + c.text + '</p>' +
+          '<p class="mt-1 font-display text-sm font-semibold text-ink">' + Math.round(day.tmax) + '° / ' + Math.round(day.tmin) + '°</p>' +
+          '<p class="text-xs text-teak">' + W.chanceOfRain + ' ' + Math.round(day.pop) + '%</p>';
+        box.appendChild(el);
+      });
+    }
+
+    function die(msg){
+      const now = document.getElementById('wx-now');
+      if (now) now.innerHTML = '<p class="text-ink/70">' + msg + '</p>';
+      const f = document.getElementById('wx-forecast');
+      if (f) f.innerHTML = '<p class="col-span-full text-ink/60">' + msg + '</p>';
+    }
+
+    const API = '/api/weather?lat=' + lat + '&lon=' + lon;
+    const FALLBACK = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon +
+      '&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,uv_index' +
+      '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max' +
+      '&forecast_days=7&timezone=auto';
+
+    function normalize(json){
+      const cur = json.current;
+      const daily = (json.daily.time || []).map((date, i) => ({
+        date,
+        code: json.daily.weather_code[i],
+        tmax: json.daily.temperature_2m_max[i],
+        tmin: json.daily.temperature_2m_min[i],
+        pop: json.daily.precipitation_probability_max ? json.daily.precipitation_probability_max[i] : 0,
+        uv: json.daily.uv_index_max ? json.daily.uv_index_max[i] : 0
+      }));
+      return {
+        current: {
+          temp: cur.temperature_2m, feels: cur.apparent_temperature, humidity: cur.relative_humidity_2m,
+          wind: cur.wind_speed_10m, code: cur.weather_code, uv: cur.uv_index
+        },
+        daily
+      };
+    }
+
+    (async () => {
+      let data = null;
+      try {
+        const r = await fetch(API);
+        if (!r.ok) throw new Error('api');
+        data = normalize(await r.json());
+      } catch (e) {
+        try {
+          const r2 = await fetch(FALLBACK);
+          if (!r2.ok) throw new Error('fallback');
+          data = normalize(await r2.json());
+        } catch (e2) {
+          die(W.unavailable);
+          return;
+        }
+      }
+      const d0 = data.daily[0];
+      const today = {
+        code: data.current.code, tmax: d0.tmax, tmin: d0.tmin,
+        wind: data.current.wind, uv: data.current.uv, pop: d0.pop
+      };
+      renderNow(data.current, d0);
+      renderAdvice(today);
+      renderForecast(data.daily);
+    })();
+  </script>
+</section>

@@ -22,13 +22,23 @@ export const siteConfig = {
     zh: '昭阿奴翁公园——老挝万象湄公河畔的城市公园。',
   },
 
+  // 简短名称（域名含义 / 常用俗称，与官方全称一致）
+  shortName: 'Chao Anouvong Park',
+
+  // SEO 站点名（格式：景点名称 + 城市 + 旅游指南），用于 <title> / og:site_name / manifest
+  siteName: {
+    lo: 'ສວນເຈົ້າອະນຸວົງ ວຽງຈັນ — ຄູ່ມືທ່ອງທ່ຽວ',
+    en: 'Chao Anouvong Park Vientiane — Visitor Guide',
+    zh: '昭阿奴翁公园 万象 — 旅游指南',
+  },
+
   // 联系电话
   phone: '',
   phoneDisplay: '',
 
-  // 评分与评论数（Google 商家资料）
+  // 评分与评论数（Google 商家资料，最新 2026-09）
   rating: 4.2,
-  reviewCount: '6,873',
+  reviewCount: '6,901',
 
   // 实时天气/日落 API 坐标（Chao Anouvong Park, Vientiane, Laos）
   coords: {
@@ -44,9 +54,23 @@ export const siteConfig = {
     import.meta.env.PUBLIC_MAPS_EMBED ||
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3795.369048300004!2d102.60731779999999!3d17.9615592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x312468891baae699%3A0x809d0bc8d450810b!2z5pit6Zi_5aW057-B5YWs5Zut!5e0!3m2!1szh-CN!2sus!4v1784773187479!5m2!1szh-CN!2sus',
 
-  // 地址与 Plus Code
+  // 地址与 Plus Code（结构化 NAP，供 JSON-LD / OG / 面包屑使用）
   address: import.meta.env.PUBLIC_ADDRESS || 'Vientiane 01600 Laos',
   plusCode: import.meta.env.PUBLIC_PLUS_CODE || 'XJ64+JW Vientiane, Laos',
+  city: 'Vientiane',
+  stateProvince: 'Vientiane Capital',
+  country: 'Laos',
+  postalCode: '01600',
+
+  // 周边核心地标（语义集群，供 JSON-LD 与正文引用）
+  nearbyLandmarks: {
+    lo: ['ປະຕູໄຊ', 'ວັດສີສະເກດ'],
+    en: ['Patuxai (Victory Monument)', 'Wat Si Saket'],
+    zh: ['凯旋门 (Patuxai)', '西萨格寺 (Wat Si Saket)'],
+  },
+
+  // 政府 / 官方旅游门户链接（E-E-A-T 权威外链）
+  govtTourismUrl: 'https://www.tourismlaos.org',
 
   // 画廊图片前缀
   galleryPrefix: 'chao-anouvong-park-',
@@ -54,6 +78,7 @@ export const siteConfig = {
   // JSON-LD sameAs
   sameAs: [
     'https://maps.app.goo.gl/Zup1C9cs3wpiu2FSA',
+    'https://www.tourismlaos.org',
     DOMAIN,
   ],
 

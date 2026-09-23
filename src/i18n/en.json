@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Chao Anouvong Park — riverside city park, Vientiane, Laos",
-    "description": "An independent, non-commercial visitor guide to Chao Anouvong Park: King Anouvong statue, Mekong sunset, night market and riverside walk — hours, how to get there, and the best time to visit."
+    "title": "Chao Anouvong Park Vientiane — Visitor Guide",
+    "description": "Chao Anouvong Park is Vientiane's riverside city park: the King Anouvong statue, Mekong sunset, night market and riverside walk — opening hours, how to get there, live weather and the best time to visit."
   },
   "header": {
     "home": "Home",
@@ -30,7 +30,7 @@
     "cta3": "📥 Offline guide (PDF)",
     "cta3Note": "Audio tour in production",
     "rating": "4.2",
-    "reviewCount": "6,873",
+    "reviewCount": "6,901",
     "viewLocation": "View on Google Maps",
     "boardCategory": "Vientiane attractions",
     "boardTitle": "Chao Anouvong Park",
@@ -424,7 +424,7 @@
       {
         "tag": "Rating",
         "value": "4.2 ★",
-        "sub": "from 6,873 reviews"
+        "sub": "from 6,901 reviews"
       },
       {
         "tag": "Open",
@@ -623,7 +623,11 @@
       { "cat": "culture", "q": "How should I behave at the statue?", "a": "The king is a sacred national hero. Dress modestly (no beachwear), never climb the base or railing, and avoid playful or disrespectful gestures. You may lay marigold or champa garlands at the offering altar." },
       { "cat": "culture", "q": "Can I fly a drone?", "a": "Not recommended without permission. The park borders the Mekong international boundary (Thailand opposite) and lies near government and diplomatic areas — an unauthorised drone risks confiscation or a heavy fine." },
       { "cat": "culture", "q": "Is the park safe at night?", "a": "Very safe. Vientiane is peaceful and the park is well lit, with many local families around. Still, watch your bag, phone and wallet in crowds." },
-      { "cat": "culture", "q": "What about the haze season?", "a": "From Feb to Apr (late dry season) agricultural burning can raise the AQI and haze the sky, so sunsets may glow red rather than golden. Consider a mask if you are sensitive." }
+      { "cat": "culture", "q": "What about the haze season?", "a": "From Feb to Apr (late dry season) agricultural burning can raise the AQI and haze the sky, so sunsets may glow red rather than golden. Consider a mask if you are sensitive." },
+      { "cat": "hours", "q": "What are the opening hours of Chao Anouvong Park?", "a": "The park is an open riverside green space with no gates, so it is accessible 24 hours a day, every day. The night market along Fa Ngum Road usually runs from about 18:00 to 22:30." },
+      { "cat": "market", "q": "What time does the Vientiane night market open?", "a": "Stalls begin setting up around 17:30–18:00 and wind down by roughly 22:30, every evening. Food, clothes and souvenirs line the promenade beside the park." },
+      { "cat": "culture", "q": "What is the Chao Anouvong statue?", "a": "A 6-metre bronze monument of King Anouvong (r. 1805–1828), unveiled in 2010, facing across the Mekong toward Thailand. It honours the last king of Vientiane and is the park's centrepiece." },
+      { "cat": "nearby", "q": "What is near Chao Anouvong Park?", "a": "It sits on Vientiane's central riverfront. A short walk away: the night market, the Fa Ngum promenade, Patuxai (Victory Monument) and Wat Si Saket." }
     ]
   },
   "legal": {
@@ -673,5 +677,158 @@
         }
       ]
     }
+  },
+  "weather": {
+    "label": "Live weather",
+    "heading": "Live Weather & 7-Day Forecast",
+    "lead": "Current conditions and the week ahead at the park's location, refreshed automatically so you can plan around the Mekong sky.",
+    "now": "Right now",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "precip": "Precipitation",
+    "forecast": "7-Day Forecast",
+    "chanceOfRain": "Chance of rain",
+    "today": "Today",
+    "updated": "Updated",
+    "loading": "Loading current weather…",
+    "unavailable": "Weather info is temporarily unavailable — please check again shortly.",
+    "cardTitle": "Current conditions",
+    "adviceTitle": "Is today a good day to visit?",
+    "outfitTitle": "What to wear",
+    "planTitle": "How to plan your visit",
+    "itemsTitle": "What to bring",
+    "riskTitle": "Risk notice",
+    "noRisk": "No weather warnings at the moment.",
+    "phrases": {
+      "o_hot": "It's warm — light, breathable clothing and sunscreen.",
+      "o_cool": "Big day–night swing — bring a light layer you can add or remove.",
+      "o_cold": "It's cool — bring a warm jacket and scarf.",
+      "o_rain": "If it's wet or windy, a waterproof jacket works best.",
+      "o_normal": "Calm weather — normal comfortable clothing is fine.",
+      "p_sunny": "Clear skies are great for a riverside walk and the sunset.",
+      "p_cloudy": "Soft light is ideal for photos and long outdoor strolls.",
+      "p_hot": "It's hot — avoid midday, shorten time outdoors, drink water.",
+      "p_rain_light": "Light rain — outdoor areas are less pleasant; watch slippery paths.",
+      "p_rain_heavy": "Heavy rain — skip long outdoor stays; use riverside cafés and covered spots.",
+      "p_thunder": "Thunderstorms — avoid trees and the water; skip boat and open-air rides.",
+      "p_wind": "Breezy — boat rides may pause; hold onto hats and light items.",
+      "i_umbrella": "Umbrella / raincoat",
+      "i_raincoat": "Raincoat (avoid long umbrellas in wind)",
+      "i_sunscreen": "Sunscreen, sunglasses, hat",
+      "i_water": "Plenty of drinking water",
+      "i_jacket": "A light jacket",
+      "i_warm": "Warm jacket",
+      "r_thunder": "⚠ Thunderstorms — stay away from trees and the river; no boating or wading.",
+      "r_heavyrain": "⚠ Heavy rain — avoid low and waterside areas; water rides may close.",
+      "r_wind": "⚠ Strong wind — keep clear of signs and river rocks; water rides likely closed.",
+      "r_fog": "⚠ Poor visibility — not good for distant views; a mask helps."
+    }
+  },
+  "facilities": {
+    "label": "Services & facilities",
+    "heading": "Visitor Services & Nearby Facilities",
+    "lead": "Practical amenities around the park, listed by type so you can plan ahead. We recommend by category only and are not affiliated with any vendor.",
+    "note": "Facility types available near the park; specific venues change, so confirm on arrival.",
+    "categories": [
+      { "icon": "🚻", "name": "Public restrooms", "desc": "Public toilets sit near the promenade and the night-market entrance, generally free or for a small upkeep fee. Bring small change and tissues." },
+      { "icon": "🅿️", "name": "Parking", "desc": "Street parking lines the riverside Fa Ngum Road. During the evening peak (after 17:30) it fills fast; paid lots and roadside bays appear nearby, and two-wheelers have marked bays." },
+      { "icon": "🍽️", "name": "Dining & cafés", "desc": "Riverside restaurants, coffee shops and the night-market food stalls ring the park. Choose busy, well-lit stalls for the freshest food." },
+      { "icon": "🛏️", "name": "Lodging", "desc": "Hotels, guesthouses and hostels sit within a short walk or tuk-tuk ride in the city centre — handy if you want the sunrise or late-night market." },
+      { "icon": "🛒", "name": "Shops & convenience", "desc": "Convenience stores, ATMs and small shops cluster in the surrounding blocks for water, snacks and essentials." },
+      { "icon": "⛽", "name": "Fuel & EV charging", "desc": "Petrol stations and EV charging points are found along the main avenues in the city, not inside the park — top up before you arrive by car." },
+      { "icon": "♿", "name": "Accessibility", "desc": "The riverside promenade is flat and paved with ramps and frequent benches; the open plaza around the statue is step-free." },
+      { "icon": "💡", "name": "Lighting & safety", "desc": "The park and riverfront are well lit at night with a steady local presence; keep bags close in crowds." }
+    ]
+  },
+  "transport": {
+    "label": "Getting there",
+    "heading": "How to Get to Chao Anouvong Park",
+    "lead": "The park sits on the Mekong in central Vientiane. Here are the practical ways in, from the airport to your own two feet.",
+    "tip": "Set the destination to “Chao Anouvong Park” or “Mekong Night Market” in any map app — both drop you at the riverside.",
+    "modes": [
+      { "icon": "✈️", "name": "From Wattay Airport (VTE)", "desc": "Wattay International is about 3–5 km west, roughly 15–25 minutes by road.", "steps": [
+        "After baggage claim, use the airport Wi-Fi and book a licensed taxi or ride via the LOCA / InDrive apps, or buy a fixed-fare ticket at the arrivals taxi counter (around 100,000–150,000 LAK).",
+        "Set the destination to Chao Anouvong Park (riverside, Mekong); the car runs via Route 13 and Fa Ngum Road to the park entrance.",
+        "After ~17:30 the riverside gets congested, so allow extra time and meet your driver at the agreed pickup point."
+      ] },
+      { "icon": "🚌", "name": "Public transit & city bus", "desc": "Vientiane's city buses and shared songthaews run along the avenues near the riverfront.", "steps": [
+        "Find a bus or songthaew heading toward the riverfront / city centre and alight near Fa Ngum Road.",
+        "From the stop it is a short walk to the statue and the promenade.",
+        "Keep small change ready; fares are low but conductors may not give change for large notes."
+      ] },
+      { "icon": "🚕", "name": "Taxi & ride-hailing", "desc": "Metered taxis and app rides (LOCA, InDrive) are the easiest door-to-door option.", "steps": [
+        "Book in the app or ask your hotel to call a metered taxi; show the driver “Chao Anouvong Park / Night Market”.",
+        "From most central hotels it is about 5–10 minutes to the riverside.",
+        "Agree a price first for street taxis without a meter to avoid surprises."
+      ] },
+      { "icon": "🛺", "name": "Tuk-tuk & songthaew", "desc": "Three-wheel tuk-tuks and shared songthaews are everywhere and happy to negotiate.", "steps": [
+        "Tell the driver “Night Market” or “Chao Anouvong Statue” and agree a fare before boarding.",
+        "They can drop you right at the promenade entrance off Fa Ngum Road."
+      ] },
+      { "icon": "🚲", "name": "Bicycle", "desc": "Flat, bike-friendly terrain and a riverside path make cycling pleasant, especially at dawn and dusk.", "steps": [
+        "Rent a bicycle from a city guesthouse or shop, then follow the riverfront path east to the park.",
+        "Use the marked roadside bays for parking; a small fee may apply."
+      ] },
+      { "icon": "🚶", "name": "On foot from the city centre", "desc": "Most riverside landmarks are within a 15–30 minute walk.", "steps": [
+        "From Patuxai, Wat Si Saket or the morning market, walk toward the Mekong and follow the river north/south to the statue.",
+        "It is a flat, shaded walk — a nice way to arrive before sunset."
+      ] }
+    ]
+  },
+  "season": {
+    "label": "Best time to visit",
+    "heading": "Seasonal Travel Strategy",
+    "lead": "Vientiane has a tropical climate with a dry season (roughly November–April) and a wet season (May–October). Here is what to expect each quarter so you can pack and time your visit well.",
+    "source": "Based on Vientiane's typical 30-year climate pattern (dry and wet seasons).",
+    "cols": ["Quarter", "Weather", "Crowds", "What to pack", "Our tip"],
+    "rows": [
+      { "q": "Nov – Jan · Cool dry", "weather": "Pleasant 20–30°C, low humidity, clear skies.", "crowds": "Comfortable, steady local use.", "pack": "Light clothes, a light layer for cool mornings.", "tip": "Best all-round window — ideal for walking and the sunset." },
+      { "q": "Feb – Apr · Hot dry", "weather": "Hot 30–38°C, hazy late in the season.", "crowds": "Busy evenings at the night market.", "pack": "Sun hat, sunscreen, lots of water.", "tip": "Come at golden hour; watch for late-season haze on sunsets." },
+      { "q": "May – Jul · Early wet", "weather": "Warming up, afternoon showers begin.", "crowds": "Quieter, greener riverside.", "pack": "Umbrella or raincoat, quick-dry clothes.", "tip": "Mornings are often clear — great for photos before noon storms." },
+      { "q": "Aug – Oct · Peak wet", "weather": "Frequent rain, lush landscape, 25–33°C.", "crowds": "Fewest visitors, coolest evenings.", "pack": "Rain gear, insect repellent.", "tip": "Rain clears the heat; check the live forecast and aim for a dry window." }
+    ]
+  },
+  "itineraries": {
+    "label": "Itineraries",
+    "heading": "Suggested Itineraries",
+    "lead": "Three ways to enjoy the park depending on who you are travelling with, plus half-day and full-day sketches.",
+    "audiencesTitle": "Pick by who's travelling",
+    "audiences": [
+      { "icon": "👨‍👩‍👧", "name": "Family with kids", "desc": "Flat paths, open lawns and the night-market buzz keep all ages happy.", "items": ["Stroll the promenade and let kids watch the fountain and river.", "Try street snacks at the night market together.", "Catch the sunset from the steps, then head back before it gets late."] },
+      { "icon": "📷", "name": "Photography & nature", "desc": "Golden hour, the Mekong glow and night-market lights are the draw.", "items": ["Arrive ~17:00 for soft light on the bronze statue.", "Shoot the sunset and blue-hour reflections from the riverside steps.", "Stay for the lantern-lit market for long exposures."] },
+      { "icon": "♿", "name": "Low-effort / accessible", "desc": "Step-free promenade, shade and plenty of benches.", "items": ["Roll or walk the flat riverside path at an easy pace.", "Rest often on benches in the shade.", "Enjoy a riverside café and the evening breeze without climbing."] }
+    ],
+    "plansTitle": "Half-day & full-day plans",
+    "plans": [
+      { "icon": "🌇", "name": "Half-day · afternoon → night", "desc": "The classic evening visit.", "steps": ["16:30 Arrive and walk the promenade.", "17:30 Watch the golden-hour statue and Mekong sunset.", "18:30 Explore the night market for food and crafts.", "20:00 Riverside wind-down and head back."] },
+      { "icon": "🌅", "name": "Full-day · morning → night", "desc": "Pair the park with nearby sights.", "steps": ["09:00 Morning temples (Wat Si Saket, nearby monasteries).", "12:00 Lunch at a riverside café.", "15:00 Rest at the hotel, avoiding the midday heat.", "17:00 Return for the statue, sunset and night market.", "20:30 Evening river breeze before returning."] }
+    ]
+  },
+  "responsibility": {
+    "label": "Respect & protect",
+    "heading": "Science & Visitor Responsibility",
+    "lead": "A few facts and habits that keep the park, the Mekong and its wildlife healthy for everyone.",
+    "riverTitle": "The Mekong: a living river",
+    "river": "The Mekong is a working, flowing river — not a swimming pool. Currents and boats make swimming unsafe, and the water quality varies with the season and upstream activity. Enjoy it from the promenade and never litter into it.",
+    "wildlifeTitle": "Wildlife you may meet",
+    "wildlife": [
+      "River birds and egrets feeding at the water's edge at dawn and dusk.",
+      "The occasional monitor lizard or otter along the banks — watch quietly, never feed.",
+      "Dok Champa and frangipani filling the gardens with scent."
+    ],
+    "zeroWasteTitle": "Leave no trace",
+    "zeroWaste": [
+      "Use the bins for night-market packaging and bring a reusable bottle.",
+      "Keep the king's statue and riverfront clean and respectful."
+    ],
+    "safetyTitle": "Stay safe & healthy",
+    "safety": [
+      "Carry water and use sunscreen in the hot dry season (Feb–Apr).",
+      "After rain, paths can be slippery — wear sensible shoes.",
+      "Watch your bag and phone in night-market crowds."
+    ],
+    "cultureTitle": "Cultural respect",
+    "culture": "Chao Anouvong is a revered national hero. Dress modestly near the statue, never climb the base or railing, and you may lay a champa or marigold garland at the offering altar."
   }
 }
