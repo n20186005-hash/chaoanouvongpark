@@ -8,9 +8,11 @@ interface Props {
   title: string;
   description: string;
   messages: Record<string, any>;
+  path?: string;
+  alternates?: { hreflang: string; href: string }[];
 }
-const { lang, title, description, messages } = Astro.props;
-const canonical = `${siteConfig.domain}/${lang}/`;
+const { lang, title, description, messages, path, alternates } = Astro.props;
+const canonical = path ? `${siteConfig.domain}${path}` : `${siteConfig.domain}/${lang}/`;
 
 const faqs = (messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : [];
 
@@ -92,10 +94,18 @@ const jsonLd = [
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#1f1a17" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-    {languagesList.map((l) => (
-      <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/`} />
-    ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/lo/`} />
+    {alternates
+      ? alternates.map((a) => (
+          <link rel="alternate" hreflang={a.hreflang} href={a.href} />
+        ))
+      : (
+        <>
+          {languagesList.map((l) => (
+            <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/`} />
+          ))}
+          <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/lo/`} />
+        </>
+      )}
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

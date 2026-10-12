@@ -18,6 +18,7 @@ import FacilitiesSection from '../../components/FacilitiesSection.astro';
 import SeasonalStrategy from '../../components/SeasonalStrategy.astro';
 import Itineraries from '../../components/Itineraries.astro';
 import Responsibility from '../../components/Responsibility.astro';
+import TopicLinks from '../../components/TopicLinks.astro';
 import Footer from '../../components/Footer.astro';
 import { getI18n } from '../../i18n/ui';
 
@@ -47,6 +48,7 @@ const { lang, messages } = await getI18n(Astro.url);
     <Itineraries messages={messages} lang={lang} />
     <Responsibility messages={messages} lang={lang} />
     <MapSection lang={lang} messages={messages} />
+    <TopicLinks lang={lang} />
   </main>
   <Footer lang={lang} messages={messages} />
 </BaseLayout>

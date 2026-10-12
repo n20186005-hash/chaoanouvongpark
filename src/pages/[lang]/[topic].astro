@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopicPage from '../../components/TopicPage.astro';
+import { languagesList, htmlLang, type Lang } from '../../i18n/ui';
+import { TOPIC_SLUGS, TOPICS, type TopicSlug } from '../../i18n/topics';
+import { siteConfig } from '../../config';
+import lo from '../../i18n/lo.json';
+import en from '../../i18n/en.json';
+import zh from '../../i18n/zh.json';
+
+export function getStaticPaths() {
+  return languagesList.flatMap((lang) =>
+    TOPIC_SLUGS.map((topic) => ({ params: { lang, topic } })),
+  );
+}
+
+const { lang, topic } = Astro.params as { lang: Lang; topic: TopicSlug };
+const content = TOPICS[lang][topic];
+const m = { lo, en, zh }[lang];
+
+const path = `/${lang}/${topic}/`;
+const alternates = languagesList
+  .map((l) => ({ hreflang: htmlLang[l], href: `${siteConfig.domain}/${l}/${topic}/` }))
+  .concat([{ hreflang: 'x-default', href: `${siteConfig.domain}/lo/${topic}/` }]);
+---
+
+<BaseLayout lang={lang} title={content.title} description={content.description} messages={m} path={path} alternates={alternates}>
+  <TopicPage lang={lang} content={content} slug={topic} messages={m} />
+</BaseLayout>

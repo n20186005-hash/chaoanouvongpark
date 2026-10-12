@@ -18,6 +18,10 @@ const guideImgs = [
     <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{guide.heading}</h2>
     <p class="mt-4 max-w-2xl text-ink/80">{guide.lead}</p>
 
+    {guide.verifiedNote && (
+      <p class="mt-3 max-w-3xl text-xs text-ink/55 border-l-2 border-gold/40 pl-3">{guide.verifiedNote}</p>
+    )}
+
     <!-- Two-Zone guide -->
     {guide.twoZone && (
       <div class="mt-10 rounded-2xl border border-gold/30 bg-white/60 p-6 max-w-4xl shadow-sm">

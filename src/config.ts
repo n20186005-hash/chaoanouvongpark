@@ -36,9 +36,9 @@ export const siteConfig = {
   phone: '',
   phoneDisplay: '',
 
-  // 评分与评论数（Google 商家资料，最新 2026-09）
+  // 评分与评论数（Google 商家资料，最新 2026-10）
   rating: 4.2,
-  reviewCount: '6,901',
+  reviewCount: '6,909',
 
   // 实时天气/日落 API 坐标（Chao Anouvong Park, Vientiane, Laos）
   coords: {

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Chao Anouvong Park Vientiane — Visitor Guide",
-    "description": "Chao Anouvong Park is Vientiane's riverside city park: the King Anouvong statue, Mekong sunset, night market and riverside walk — opening hours, how to get there, live weather and the best time to visit."
+    "title": "Chao Anouvong Park Vientiane | Sunset, Statue & Visitor Guide",
+    "description": "Visit Chao Anouvong Park in Vientiane, Laos. Explore the King Anouvong statue, Mekong sunset views, nearby night market, directions and practical visitor tips."
   },
   "header": {
     "home": "Home",
@@ -30,7 +30,7 @@
     "cta3": "📥 Offline guide (PDF)",
     "cta3Note": "Audio tour in production",
     "rating": "4.2",
-    "reviewCount": "6,901",
+    "reviewCount": "6,909",
     "viewLocation": "View on Google Maps",
     "boardCategory": "Vientiane attractions",
     "boardTitle": "Chao Anouvong Park",
@@ -206,7 +206,7 @@
       {
         "year": "2010",
         "title": "Park & bronze statue unveiled",
-        "text": "Completed for the 450th anniversary of Vientiane's founding: a 14-metre bronze statue of the king rises on the Mekong shore."
+        "text": "Completed for the 450th anniversary of Vientiane's founding: a bronze statue of the king — about 14 metres tall including its base — rises on the Mekong shore."
       },
       {
         "year": "Today",
@@ -218,7 +218,7 @@
     "narrative": [
       {
         "subtitle": "The hero-king who gazes at the great river",
-        "text": "At the centre of the park stands the bronze statue of King Chao Anouvong, 8 metres tall (14 metres including its base). In armour, his right hand grips a sword while his left hand points firmly across the Mekong toward Thailand. Chao Anouvong (1767–1829) was the last ruler of the Vientiane Kingdom and a symbol of Lao independence and dignity."
+        "text": "At the centre of the park stands the bronze statue of King Chao Anouvong, about 8 metres tall (about 14 metres including its base). In armour, his right hand grips a sword while his left hand points firmly across the Mekong toward Thailand. Chao Anouvong (1767–1829) was the last ruler of the Vientiane Kingdom and a symbol of Lao independence and dignity."
       },
       {
         "subtitle": "The final echo of 1826",
@@ -334,66 +334,8 @@
     "intro": "A glance at recent visitor impressions (from public travel reviews).",
     "disclaimer": "Based on public reviews · not an official endorsement",
     "declaration": "Reviews compiled from independent travel platforms, for reference only",
-    "featured": [
-      {
-        "text": "The King's statue is magnificent, and the Mekong sunset is absolutely not to be missed!",
-        "source": "★ 5.0 · Traveler review"
-      },
-      {
-        "text": "Great for an evening stroll, the night market next to it is fun with lots of snacks.",
-        "source": "★ 5.0 · Visitor comment"
-      }
-    ],
-    "items": [
-      {
-        "text": "[Must see: Sunset] The view is very open and the sunset is beautiful.",
-        "rating": "5",
-        "name": "Ana",
-        "date": "March 2026"
-      },
-      {
-        "text": "[King's Statue] A very historic landmark, worth seeing.",
-        "rating": "5",
-        "name": "Tom",
-        "date": "February 2026"
-      },
-      {
-        "text": "[Night Market] The night market next to it is lively, you can buy lots of souvenirs.",
-        "rating": "4",
-        "name": "Lina",
-        "date": "January 2026"
-      },
-      {
-        "text": "[Relaxing Walk] The river breeze is very comfortable, lots of locals.",
-        "rating": "4",
-        "name": "Wei",
-        "date": "February 2026"
-      },
-      {
-        "text": "[Exercise] Lots of people dancing in the square at night, very energetic.",
-        "rating": "5",
-        "name": "Ken",
-        "date": "December 2025"
-      },
-      {
-        "text": "[Location] Right in the city center, very convenient transportation.",
-        "rating": "5",
-        "name": "Sora",
-        "date": "January 2026"
-      },
-      {
-        "text": "[Food] Night market snacks are cheap and delicious.",
-        "rating": "4",
-        "name": "Pim",
-        "date": "March 2026"
-      },
-      {
-        "text": "[Environment] The park is clean and well-landscaped.",
-        "rating": "4",
-        "name": "Dan",
-        "date": "February 2026"
-      }
-    ],
+    "featured": [],
+    "items": [],
     "viewLocation": "View on Google Maps"
   },
   "sources": {
@@ -424,7 +366,7 @@
       {
         "tag": "Rating",
         "value": "4.2 ★",
-        "sub": "from 6,901 reviews"
+        "sub": "from 6,909 reviews"
       },
       {
         "tag": "Open",
@@ -493,6 +435,7 @@
     "copyright": "© 2026 Chao Anouvong Park guide · non-commercial"
   },
   "guide": {
+    "verifiedNote": "Practical details below (hours, night-market times, fees and transport fares) are typical local values verified in October 2026. Opening times and prices may change, so please confirm on site before your visit.",
     "label": "Visitor Guide",
     "heading": "Visit Tips",
     "lead": "Straightforward, useful advice for a relaxed evening at Chao Anouvong Park.",
@@ -626,7 +569,7 @@
       { "cat": "culture", "q": "What about the haze season?", "a": "From Feb to Apr (late dry season) agricultural burning can raise the AQI and haze the sky, so sunsets may glow red rather than golden. Consider a mask if you are sensitive." },
       { "cat": "hours", "q": "What are the opening hours of Chao Anouvong Park?", "a": "The park is an open riverside green space with no gates, so it is accessible 24 hours a day, every day. The night market along Fa Ngum Road usually runs from about 18:00 to 22:30." },
       { "cat": "market", "q": "What time does the Vientiane night market open?", "a": "Stalls begin setting up around 17:30–18:00 and wind down by roughly 22:30, every evening. Food, clothes and souvenirs line the promenade beside the park." },
-      { "cat": "culture", "q": "What is the Chao Anouvong statue?", "a": "A 6-metre bronze monument of King Anouvong (r. 1805–1828), unveiled in 2010, facing across the Mekong toward Thailand. It honours the last king of Vientiane and is the park's centrepiece." },
+      { "cat": "culture", "q": "What is the Chao Anouvong statue?", "a": "A bronze monument of King Anouvong (r. 1805–1828), about 8 metres tall (about 14 metres including its base), unveiled in 2010, facing across the Mekong toward Thailand. It honours the last king of Vientiane and is the park's centrepiece." },
       { "cat": "nearby", "q": "What is near Chao Anouvong Park?", "a": "It sits on Vientiane's central riverfront. A short walk away: the night market, the Fa Ngum promenade, Patuxai (Victory Monument) and Wat Si Saket." }
     ]
   },

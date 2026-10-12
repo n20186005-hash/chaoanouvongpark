@@ -59,9 +59,33 @@ async function handleWeather(request: Request, ctx: any): Promise<Response> {
 export default {
   async fetch(request: Request, env: any, ctx: any): Promise<Response> {
     const url = new URL(request.url);
+    const host = url.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1';
+
+    // Host-level canonicalisation (Workers static assets do not support
+    // domain-level _redirects): force non-www + https, except on local dev.
+    if (!isLocal) {
+      let redirected = false;
+      let targetHost = host;
+      let targetProto = url.protocol;
+      if (host.startsWith('www.')) {
+        targetHost = host.slice(4);
+        redirected = true;
+      }
+      if (url.protocol === 'http:') {
+        targetProto = 'https:';
+        redirected = true;
+      }
+      if (redirected) {
+        return Response.redirect(
+          `${targetProto}//${targetHost}${url.pathname}${url.search}`,
+          301,
+        );
+      }
+    }
 
     if (url.pathname === '/') {
-      return Response.redirect(`${url.origin}/lo/`, 302);
+      return Response.redirect(`${url.origin}/lo/`, 301);
     }
 
     if (url.pathname === '/api/weather') {
