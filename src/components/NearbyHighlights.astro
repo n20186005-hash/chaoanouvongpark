@@ -3,14 +3,17 @@ import type { Lang } from '../i18n/ui';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const copy = {
-  en: { eyebrow: 'Explore nearby', title: 'More to see around the Mekong', description: 'Pair the riverside with Vientiane’s historic temples and civic landmarks. Each stop has its own map location and visiting arrangements.', cta: 'See the walking guide' },
-  lo: { eyebrow: 'ທ່ຽວໃກ້ຄຽງ', title: 'ຄົ້ນພົບສະຖານທີ່ໃກ້ແມ່ນ້ຳຂອງ', description: 'ທ່ຽວວັດເກົ່າ ແລະ ອາຄານສຳຄັນຂອງວຽງຈັນຕໍ່ຈາກສວນແຄມຂອງ. ແຕ່ລະບ່ອນມີແຜນທີ່ ແລະ ເວລາເປີດຕ່າງກັນ.', cta: 'ເບິ່ງຄູ່ມືເສັ້ນທາງ' },
-  zh: { eyebrow: '探索周边', title: '湄公河畔还有这些景点', description: '将河滨散步与万象历史寺院、市政地标串成半日行程。每个地点均有独立地图定位，入场安排分别核对。', cta: '查看周边步行攻略' },
+  en: { eyebrow: 'Explore nearby', title: 'More to see around the Mekong', description: 'Six starting points for a riverside afternoon, from royal-era temples to the monument, sunset promenade and night market. Follow each card for its own visitor guide.', cta: 'Read the place guide', all: 'Explore all nearby stops' },
+  lo: { eyebrow: 'ທ່ຽວໃກ້ຄຽງ', title: 'ຄົ້ນພົບສະຖານທີ່ໃກ້ແມ່ນ້ຳຂອງ', description: 'ຫົກຈຸດແນະນຳສຳລັບທ່ຽວວຽງຈັນຕອນບ່າຍ: ວັດເກົ່າ, ອານຸສາວະລີ, ທາງຍ່າງຊົມຕາເວັນຕົກ ແລະ ຕະຫຼາດກາງຄືນ.', cta: 'ອ່ານຄູ່ມືສະຖານທີ່', all: 'ເບິ່ງສະຖານທີ່ໃກ້ຄຽງທັງໝົດ' },
+  zh: { eyebrow: '探索周边', title: '湄公河畔还有这些景点', description: '先从六个不同的游览主题出发：古寺、城市地标、国王雕像、河滨日落与夜市。点击卡片可阅读各自的实用指南。', cta: '阅读景点指南', all: '查看完整周边游览攻略' },
 }[lang];
 const places = [
   { image: '/gallery/nearby-wat-si-saket.jpg', slug: 'wat-si-saket', name: { en: 'Wat Si Saket', lo: 'ວັດສີສະເກດ', zh: '西萨格寺' }[lang] },
   { image: '/gallery/nearby-ho-phra-keo.jpg', slug: 'ho-phra-keo', name: { en: 'Ho Phra Keo', lo: 'ຫໍພະແກ້ວ', zh: '玉佛寺' }[lang] },
   { image: '/gallery/nearby-presidential-palace.jpg', slug: 'presidential-palace', name: { en: 'Presidential Palace', lo: 'ຫໍຄຳປະທານປະເທດ', zh: '主席府' }[lang] },
+  { image: '/gallery/chao-anouvong-park-1.jpg', slug: 'chao-anouvong-statue', name: { en: 'King Anouvong Statue', lo: 'ຮູບປັ້ນພະເຈົ້າອະນຸວົງ', zh: '昭阿奴翁国王雕像' }[lang] },
+  { image: '/gallery/nearby-night-market.jpg', slug: 'night-market', name: { en: 'Vientiane Night Market', lo: 'ຕະຫຼາດກາງຄືນວຽງຈັນ', zh: '万象夜市' }[lang] },
+  { image: '/gallery/chao-anouvong-park-8.jpg', slug: 'mekong-sunset', name: { en: 'Mekong Sunset Walk', lo: 'ຍ່າງຊົມຕາເວັນຕົກແຄມຂອງ', zh: '湄公河日落步道' }[lang] },
 ];
 ---
 <section id="nearby" class="py-16 bg-ivory text-ink">
@@ -26,5 +29,6 @@ const places = [
         </a>
       ))}
     </div>
+    <a href={`/${lang}/nearby-attractions/`} class="inline-flex mt-8 rounded-full border border-teak/30 px-6 py-3 text-sm font-semibold text-teak hover:bg-teak hover:text-ivory transition-colors">{copy.all} →</a>
   </div>
 </section>
