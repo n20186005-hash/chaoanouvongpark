@@ -102,11 +102,22 @@ export const EXTRA_VENUES = Object.fromEntries(entries.map(e => [e.slug, {
 export const EXTRA_ATTRACTIONS = Object.fromEntries((['en','lo','zh'] as Lang[]).map(lang => [lang,
   Object.fromEntries(entries.map(e => {
     const t = localized[lang]; const name=e[lang]; const fact=e[`${lang}Fact` as 'enFact'|'loFact'|'zhFact'];
+    const tagline = `${t[e.kind]} · ${lang === 'zh' ? '万象' : lang === 'lo' ? 'ວຽງຈັນ' : 'Vientiane'}`;
+    const intro = lang === 'zh'
+      ? `来到${name}，可以从它所处的城市街区开始认识这处${t[e.kind]}。详细位置：${e.address}。建议先了解主要看点，再依据当天开放与交通情况规划行程。`
+      : lang === 'lo'
+        ? `ມາຮູ້ຈັກ ${name} ໃນວຽງຈັນ. ທີ່ຕັ້ງ: ${e.address}. ກວດເສັ້ນທາງ ແລະ ເວລາເຂົ້າຊົມກ່ອນໄປ.`
+        : `Discover ${name} in its own Vientiane setting. Find it at ${e.address}; the specific map pin and visiting conditions matter more than proximity on a city-wide attractions list.`;
+    const about = lang === 'zh'
+      ? `${name}是一处${t[e.kind]}，不属于昭阿奴翁公园内部设施。${t.context} 参观或拍照前先确认管理方现场规定。`
+      : lang === 'lo'
+        ? `${name} ເປັນ${t[e.kind]} ທີ່ມີລະບຽບຂອງຕົນເອງ ບໍ່ແມ່ນສ່ວນຂອງສວນເຈົ້າອະນຸວົງ. ${t.context}`
+        : `${name} is a distinct ${t[e.kind].toLowerCase()}, not a facility inside Chao Anouvong Park. ${t.context} Consult the site's own visitor notices.`;
     return [e.slug, {
-      name, tagline:fact, description:`${name} — ${fact}`,
-      intro:fact, about:fact, historical:fact,
+      name, tagline, description:`${name} — ${fact}`,
+      intro, about, historical:fact,
       architecture:t.watch, culture:t.context,
-      highlights:[fact,t.watch,t.context],
+      highlights:[`${name} · ${t[e.kind]}`,t.watch],
       route:[...t.steps],guidelines:[...t.rules],photoTips:[...t.photos],
       faq:[{q:t.faq[0],a:t.faq[1]},{q:t.faq[2],a:t.faq[3]}],
     }];
