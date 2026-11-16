@@ -1,4 +1,5 @@
 import type { Lang } from './ui';
+import { ATTRACTION_PROFILES } from './attractionProfiles';
 
 /**
  * Distinct Vientiane places, not duplicate aliases or generic itineraries.
@@ -102,6 +103,7 @@ export const EXTRA_VENUES = Object.fromEntries(entries.map(e => [e.slug, {
 export const EXTRA_ATTRACTIONS = Object.fromEntries((['en','lo','zh'] as Lang[]).map(lang => [lang,
   Object.fromEntries(entries.map(e => {
     const t = localized[lang]; const name=e[lang]; const fact=e[`${lang}Fact` as 'enFact'|'loFact'|'zhFact'];
+    const profile = ATTRACTION_PROFILES[e.slug]?.[lang];
     const tagline = `${t[e.kind]} · ${lang === 'zh' ? '万象' : lang === 'lo' ? 'ວຽງຈັນ' : 'Vientiane'}`;
     const intro = lang === 'zh'
       ? `来到${name}，可以从它所处的城市街区开始认识这处${t[e.kind]}。详细位置：${e.address}。建议先了解主要看点，再依据当天开放与交通情况规划行程。`
@@ -116,9 +118,9 @@ export const EXTRA_ATTRACTIONS = Object.fromEntries((['en','lo','zh'] as Lang[])
     return [e.slug, {
       name, tagline, description:`${name} — ${fact}`,
       intro, about, historical:fact,
-      architecture:t.watch, culture:t.context,
-      highlights:[`${name} · ${t[e.kind]}`,t.watch],
-      route:[...t.steps],guidelines:[...t.rules],photoTips:[...t.photos],
+      architecture:profile?.[0] ?? t.watch, culture:profile?.[1] ?? t.context,
+      highlights:profile ? [profile[0],profile[1]] : [`${name} · ${t[e.kind]}`,t.watch],
+      route:profile?.[2].split('|') ?? [...t.steps],guidelines:[...t.rules],photoTips:[...t.photos],
       faq:[{q:t.faq[0],a:t.faq[1]},{q:t.faq[2],a:t.faq[3]}],
     }];
   }))
