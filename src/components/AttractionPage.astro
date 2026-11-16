@@ -1,0 +1,68 @@
+---
+import type { Lang } from '../i18n/ui';
+import { ATTRACTIONS, VENUES, type AttractionSlug } from '../i18n/attractions';
+
+interface Props { lang: Lang; slug: AttractionSlug }
+const { lang, slug } = Astro.props;
+const a = ATTRACTIONS[lang][slug];
+const v = VENUES[slug];
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.mapQuery)}`;
+const localizedDetails = {
+  lo: {
+    'wat-si-saket': { type: 'ວັດພຸດທະສາສະໜາເກົ່າ ແລະ ມໍລະດົກວັດທະນະທຳ', visit: '45–75 ນາທີ', hours: 'ຂໍ້ມູນ Tourism Laos: 08:00–12:00 ແລະ 13:00–17:00; ປິດວັນພັກລັດ. ກວດຢູ່ປະຕູອີກຄັ້ງ', fee: 'Tourism Laos ລະບຸ 30,000 ກີບ; ກວດລາຄາປັດຈຸບັນຢູ່ສະຖານທີ່' },
+    'ho-phra-keo': { type: 'ອະດີດວັດຫຼວງ ແລະ ພິພິທະພັນມໍລະດົກ', visit: '30–60 ນາທີ', hours: 'ເວລາເຂົ້າຊົມຂຶ້ນກັບປະກາດຂອງພິພິທະພັນ; ກວດຢູ່ປະຕູ', fee: 'ອາດມີຄ່າເຂົ້າ; ກວດລາຄາປັດຈຸບັນຢູ່ສະຖານທີ່' },
+    'presidential-palace': { type: 'ອາຄານລັດສຳລັບພິທີການ; ຊົມດ້ານນອກ', visit: '10–20 ນາທີ', hours: 'ບໍ່ແມ່ນບ່ອນເຂົ້າຊົມທົ່ວໄປ; ຊົມຈາກຈຸດສາທາລະນະທີ່ອະນຸຍາດ', fee: 'ບໍ່ມີຄ່າປີ້ເມື່ອຊົມຈາກຖະໜົນສາທາລະນະ; ບໍ່ແມ່ນການອະນຸຍາດເຂົ້າອາຄານ' },
+  },
+  zh: {
+    'wat-si-saket': { type: '历史佛教寺院、文化遗产', visit: '45—75 分钟', hours: '老挝旅游资料公布为 08:00—12:00、13:00—17:00，公共假日关闭；请以入口现场时间为准', fee: '旅游资料标示 30,000 基普；实际票价请现场核实' },
+    'ho-phra-keo': { type: '前王室佛教寺院、文化遗产博物馆', visit: '30—60 分钟', hours: '按馆方公布的参观时段开放；具体时间请现场核实', fee: '可能收取参观门票；现行金额请现场核实' },
+    'presidential-palace': { type: '国家礼仪与公务建筑，仅建议外观参观', visit: '外观观赏 10—20 分钟', hours: '不是常规自由进入的公共景点；仅从允许的公共区域观赏', fee: '公共道路观赏外观无需购票，不代表可以进入院内' },
+  },
+  en: {
+    'wat-si-saket': { type: v.type, visit: v.visit, hours: v.hours, fee: v.fee },
+    'ho-phra-keo': { type: VENUES['ho-phra-keo'].type, visit: VENUES['ho-phra-keo'].visit, hours: VENUES['ho-phra-keo'].hours, fee: VENUES['ho-phra-keo'].fee },
+    'presidential-palace': { type: VENUES['presidential-palace'].type, visit: VENUES['presidential-palace'].visit, hours: VENUES['presidential-palace'].hours, fee: VENUES['presidential-palace'].fee },
+  },
+}[lang][slug];
+const l = {
+  en: { overview: 'Discover this place', tips: 'Visit tips', highlights: 'Highlights', about: 'About & management', facts: 'Basic information', location: 'Address', type: 'Attraction type', stay: 'Recommended stay', rating: 'Visitor ratings', hours: 'Opening hours', fee: 'Ticket prices', transit: 'How to get here', charm: 'Why it matters', history: 'History', architecture: 'Architectural features', culture: 'Cultural meaning', route: 'Recommended walking route', guidelines: 'Visitor guidelines', photos: 'Photo spots', staynear: 'Accommodation nearby', reviews: 'Visitor reviews', map: 'Location & Google Maps', faq: 'Frequently asked questions', back: 'Explore more nearby places', check: 'Current rating and review count: see the separate Google Maps place listing; not reproduced without a dated verification.', transport: 'From central Vientiane, walk if convenient or show the exact map pin to a tuk-tuk/taxi driver. Combine nearby stops on foot, use safe crossings and allow for heat.', accommodation: 'For convenient sightseeing, compare guesthouses and hotels in central Vientiane near Setthathirath Road or Fa Ngum Road. Check actual walking distance, noise, access and recent guest reviews before booking.', reviewText: 'Read the latest first-hand visitor reviews on the attraction’s own map listing. Ratings and review counts are not shared across nearby places.', introTip: 'Plan a daytime visit where access is offered, keep drinking water handy, and follow posted visitor restrictions.' },
+  lo: { overview: 'ສຳຫຼວດສະຖານທີ່', tips: 'ຄຳແນະນຳ', highlights: 'ຈຸດເດັ່ນ', about: 'ກ່ຽວກັບ ແລະ ການຄຸ້ມຄອງ', facts: 'ຂໍ້ມູນພື້ນຖານ', location: 'ທີ່ຢູ່', type: 'ປະເພດ', stay: 'ເວລາທີ່ແນະນຳ', rating: 'ຄະແນນຜູ້ຢ້ຽມຢາມ', hours: 'ເວລາເປີດ', fee: 'ຄ່າເຂົ້າ', transit: 'ວິທີເດີນທາງ', charm: 'ເລື່ອງທີ່ໜ້າສົນໃຈ', history: 'ປະຫວັດ', architecture: 'ສະຖາປັດຕະຍະກຳ', culture: 'ຄວາມໝາຍທາງວັດທະນະທຳ', route: 'ເສັ້ນທາງຍ່າງແນະນຳ', guidelines: 'ຂໍ້ຄວນຮູ້', photos: 'ມຸມຖ່າຍຮູບ', staynear: 'ທີ່ພັກໃກ້ຄຽງ', reviews: 'ຄຳຄິດເຫັນ', map: 'ທີ່ຢູ່ ແລະ ແຜນທີ່', faq: 'ຄຳຖາມທີ່ພົບເລື້ອຍ', back: 'ເບິ່ງບ່ອນໃກ້ຄຽງ', check: 'ເບິ່ງຄະແນນ ແລະ ຈຳນວນຄຳຄິດເຫັນຫຼ້າສຸດໃນ Google Maps ຂອງສະຖານທີ່ນີ້.', transport: 'ຈາກໃຈກາງວຽງຈັນສາມາດຍ່າງ ຫຼື ໃຊ້ລົດຕຸກຕຸກ/ແທັກຊີ. ສະແດງແຜນທີ່ຈຸດນີ້ໃຫ້ຄົນຂັບ ແລະ ລະວັງຖະໜົນ.', accommodation: 'ເລືອກໂຮງແຮມ ຫຼື ເຮືອນພັກໃນໃຈກາງວຽງຈັນໃກ້ຖະໜົນເສດຖາທິລາດ ຫຼື ຟ້າງຸ່ມ. ກວດໄລຍະຍ່າງ, ສຽງລົບກວນ ແລະ ຄຳຄິດເຫັນໃໝ່.', reviewText: 'ອ່ານຄຳຄິດເຫັນຜູ້ມາຢ້ຽມຢາມໃນແຜນທີ່ຂອງສະຖານທີ່ນີ້; ບໍ່ນຳຄະແນນຂອງບ່ອນອື່ນມາໃຊ້.', introTip: 'ມາໃນຕອນກາງວັນ, ນຳນ້ຳດື່ມ ແລະ ເຄົາລົບປະກາດຂອງສະຖານທີ່.' },
+  zh: { overview: '探索景点', tips: '游览建议', highlights: '景区特色', about: '关于景点及管理主体', facts: '基本信息', location: '具体地址', type: '景点类型', stay: '推荐停留', rating: '游客评分', hours: '开放时间', fee: '门票价格', transit: '交通方式', charm: '发现景点魅力', history: '历史背景', architecture: '建筑特色', culture: '文化意义', route: '推荐步行路线', guidelines: '游览须知', photos: '拍照机位', staynear: '附近住宿建议', reviews: '游客评价', map: '位置与 Google 地图', faq: '常见问题', back: '探索更多周边景点', check: '最新评分和评论数量请查看该景点独立 Google 地图条目；没有注明同步时间的数据不直接复制。', transport: '从万象市中心可按实际距离步行，或搭乘突突车、出租车。向司机出示本页独立地点地图；附近景点适合分段步行，过街注意车辆及炎热天气。', accommodation: '可以考虑 Setthathirath 路及 Fa Ngum 河滨路周边的市中心酒店、旅馆。订房时比较实际步行距离、出入口、噪声及近期住客评价；不虚构特定酒店的价格或服务。', reviewText: '游客的近期感受、最新评价数量和评分可从本景点专属 Google 地图页面查看，不能直接套用昭阿奴翁公园或其他地点的数据。', introTip: '优先白天参观允许入内的文化场馆，带饮用水，遵守现场公布的开放与拍摄规定。' },
+}[lang];
+
+const detailItems = [[l.type, localizedDetails.type], [l.location, v.address], [l.stay, localizedDetails.visit], [l.rating, l.check]];
+const sections = [[l.history, a.historical], [l.architecture, a.architecture], [l.culture, a.culture]];
+const faqLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: a.faq.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
+---
+<main class="bg-ivory text-ink">
+  <section class="bg-teakDeep text-ivory pt-24 pb-14">
+    <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-2 gap-9 items-center">
+      <div>
+        <a class="text-gold text-sm hover:underline" href={`/${lang}/nearby-attractions/`}>← {l.back}</a>
+        <h1 class="font-display text-4xl md:text-5xl font-semibold mt-5">{a.name}</h1>
+        <p class="font-display text-xl text-goldBright mt-4">{a.tagline}</p>
+        <p class="mt-5 text-ivory/80 leading-relaxed">{a.intro}</p>
+        <div class="mt-5 flex flex-wrap gap-3 text-sm"><span class="border border-gold/40 rounded-full px-4 py-2">{localizedDetails.visit}</span><span class="border border-gold/40 rounded-full px-4 py-2">{localizedDetails.hours}</span></div>
+        <a href={mapUrl} target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex rounded-full bg-gold text-teakDeep px-6 py-3 font-semibold hover:bg-goldBright">Google Maps · {l.map} ↗</a>
+      </div>
+      <img src={v.image} alt={`${a.name}, Vientiane, Laos`} class="rounded-2xl w-full max-h-[440px] object-cover border border-gold/30" loading="eager" />
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-5 py-14 space-y-16">
+    <section><p class="font-hand text-gold text-xl">{l.overview}</p><h2 class="font-display text-teak text-3xl mt-2">{a.name}</h2><p class="leading-relaxed mt-5 text-ink/80">{a.about}</p><div class="mt-5 bg-white/70 rounded-xl p-6 border border-gold/20"><h3 class="font-display text-xl text-teak">{l.tips}</h3><p class="mt-2">{l.introTip}</p></div><h3 class="font-display text-xl text-teak mt-7">{l.highlights}</h3><ul class="mt-3 grid sm:grid-cols-2 gap-3">{a.highlights.map(h => <li class="p-4 bg-white/60 rounded-xl border border-gold/20">✦ {h}</li>)}</ul></section>
+    <section class="rounded-2xl bg-white/70 border border-gold/25 p-6 md:p-9"><h2 class="font-display text-teak text-3xl">{l.about}</h2><p class="mt-5 leading-relaxed">{v.management[lang]}</p></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.facts}</h2><dl class="mt-5 grid sm:grid-cols-2 gap-3">{detailItems.map(([name, value]) => <div class="bg-white/60 border border-gold/20 p-5 rounded-xl"><dt class="text-sm text-gold font-medium">{name}</dt><dd class="mt-2 leading-relaxed">{value}</dd></div>)}</dl></section>
+    <section class="grid md:grid-cols-2 gap-5"><div class="bg-white/60 rounded-xl border border-gold/20 p-6"><h2 class="font-display text-teak text-2xl">{l.hours}</h2><p class="mt-3 leading-relaxed">{localizedDetails.hours}</p></div><div class="bg-white/60 rounded-xl border border-gold/20 p-6"><h2 class="font-display text-teak text-2xl">{l.fee}</h2><p class="mt-3 leading-relaxed">{localizedDetails.fee}</p></div></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.transit}</h2><p class="mt-4 leading-relaxed">{l.transport}</p><a class="mt-4 text-gold inline-block hover:underline" href={mapUrl} target="_blank" rel="noopener noreferrer">{v.address} · Google Maps ↗</a></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.charm}</h2><div class="mt-5 space-y-7">{sections.map(([title, body], i) => <article class="border-l-4 border-gold pl-5"><span class="text-gold font-semibold">{i + 1}</span><h3 class="font-display text-teak text-2xl mt-1">{title}</h3><p class="mt-3 leading-relaxed text-ink/80">{body}</p></article>)}</div></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.route}</h2><ol class="mt-5 space-y-4">{a.route.map((step, i) => <li class="flex gap-4 bg-white/50 border border-gold/20 rounded-xl p-4"><span class="w-9 h-9 shrink-0 rounded-full bg-teak text-gold flex items-center justify-center font-semibold">{i + 1}</span><span class="leading-relaxed">{step}</span></li>)}</ol></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.guidelines}</h2><ul class="mt-4 list-disc pl-6 space-y-2">{a.guidelines.map(t => <li>{t}</li>)}</ul></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.photos}</h2><div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">{v.gallery.map((photo, i) => <figure><img src={photo} alt={`${a.name} — ${a.photoTips[i % a.photoTips.length]}`} class="rounded-xl w-full h-56 object-cover" loading="lazy" /><figcaption class="mt-2 text-sm text-ink/65">{a.photoTips[i % a.photoTips.length]}</figcaption></figure>)}</div><ol class="mt-5 space-y-3 list-decimal pl-6">{a.photoTips.map(t => <li>{t}</li>)}</ol></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.staynear}</h2><p class="mt-4 leading-relaxed">{l.accommodation}</p></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.reviews}</h2><p class="mt-4 leading-relaxed">{l.reviewText}</p><a class="mt-3 inline-block text-gold hover:underline" href={mapUrl} target="_blank" rel="noopener noreferrer">Google Maps ↗</a></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.faq}</h2><div class="mt-5 space-y-3">{a.faq.map(f => <details class="bg-white/60 rounded-xl border border-gold/20 p-5"><summary class="cursor-pointer font-semibold text-teak">{f.q}</summary><p class="mt-3 leading-relaxed">{f.a}</p></details>)}</div></section>
+    <section><h2 class="font-display text-teak text-3xl">{l.map}</h2><p class="mt-4">{v.address}</p><div class="mt-5 flex flex-wrap gap-3"><a class="rounded-full bg-teak text-ivory px-6 py-3" href={mapUrl} target="_blank" rel="noopener noreferrer">Google Maps ↗</a><a class="rounded-full border border-gold px-6 py-3 text-teak" href={`/${lang}/nearby-attractions/`}>{l.back} →</a></div><p class="mt-5 text-sm text-ink/60"><a class="underline" href={v.source} target="_blank" rel="noopener noreferrer">{l.facts} · Tourism reference ↗</a></p></section>
+  </div>
+</main>
+<script type="application/ld+json" set:html={JSON.stringify(faqLd)} />

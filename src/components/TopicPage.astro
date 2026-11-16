@@ -19,6 +19,26 @@ const related = content.related
   .map((r) => ({ slug: r, title: TOPICS[lang][r].title }))
   .filter((r) => r.slug !== slug);
 
+const isNewGuide = slug === 'nearby-attractions' || slug === 'visit-planner';
+const labels = {
+  en: { subtitle: 'Vientiane · Laos · Practical travel guide', about: 'About the park and its management', parkManagement: 'Chao Anouvong Park is a public riverside space within Vientiane Capital. The Vientiane Capital administration has led public-space and smoke-free initiatives here; the park opened as part of the Mekong riverfront redevelopment in 2010. Its day-to-day maintenance arrangements may involve different city units and service providers. Nearby temples and civic buildings are managed separately, not by the park.', facts: 'Visitor essentials', where: 'Location', fee: 'Park entry', duration: 'Suggested stay', access: 'Access', photo: 'Best photo viewpoints', review: 'Visitor reviews', route: 'Plan your next stop', source: 'Background references', admission: 'Generally free; separate venues may charge', length: '45–90 min for the park; allow half a day for nearby sights', opening: 'Open public space; temporary event restrictions possible', maps: 'Get directions', reviewText: 'For recent visitor experiences and the latest public rating, open the individual place listing on Google Maps. Ratings for different attractions should not be presented as one park score.' },
+  lo: { subtitle: 'ວຽງຈັນ · ລາວ · ຄູ່ມືທ່ອງທ່ຽວ', about: 'ກ່ຽວກັບສວນ ແລະ ການຈັດການ', parkManagement: 'ສວນເຈົ້າອະນຸວົງເປັນພື້ນທີ່ສາທາລະນະແຄມແມ່ນ້ຳຂອງຂອງນະຄອນຫຼວງວຽງຈັນ. ອົງການປົກຄອງນະຄອນຫຼວງໄດ້ດຳເນີນນະໂຍບາຍພື້ນທີ່ສາທາລະນະ ແລະ ສວນປອດຢາສູບຢູ່ທີ່ນີ້. ສວນເປີດໃນປີ 2010 ເປັນສ່ວນໜຶ່ງຂອງໂຄງການປັບປຸງຝັ່ງຂອງ. ໜ່ວຍງານບຳລຸງຮັກສາປະຈຳວັນອາດແຕກຕ່າງກັນ; ວັດ ແລະ ອາຄານລັດໃກ້ຄຽງມີການຄຸ້ມຄອງແຍກຕ່າງຫາກ.', facts: 'ຂໍ້ມູນສຳລັບຜູ້ມາຢ້ຽມຢາມ', where: 'ທີ່ຕັ້ງ', fee: 'ຄ່າເຂົ້າສວນ', duration: 'ເວລາແນະນຳ', access: 'ການເຂົ້າຊົມ', photo: 'ມຸມຖ່າຍຮູບ', review: 'ຄຳຄິດເຫັນຜູ້ມາຢ້ຽມຢາມ', route: 'ໄປຈຸດຕໍ່ໄປ', source: 'ແຫຼ່ງຂໍ້ມູນ', admission: 'ສວນປົກກະຕິເຂົ້າຟຣີ; ສະຖານທີ່ອື່ນອາດມີຄ່າເຂົ້າ', length: '45–90 ນາທີສຳລັບສວນ; ເຄິ່ງມື້ສຳລັບບ່ອນໃກ້ຄຽງ', opening: 'ພື້ນທີ່ສາທາລະນະ; ອາດປິດຊົ່ວຄາວໃນມື້ມີງານ', maps: 'ນຳທາງ', reviewText: 'ສາມາດເບິ່ງຄຳຄິດເຫັນ ແລະ ຄະແນນຫຼ້າສຸດໄດ້ທີ່ Google Maps ຂອງແຕ່ລະສະຖານທີ່.' },
+  zh: { subtitle: '万象 · 老挝 · 实用游览指南', about: '关于昭阿奴翁公园及管理主体', parkManagement: '昭阿奴翁公园是万象首都湄公河滨的公共开放空间。万象首都行政当局参与了这里的公共空间与无烟公园政策管理；公园于2010年随湄公河滨改造项目向公众开放，逐渐成为市民散步、锻炼和举办活动的场所。日常维护的具体执行单位可能涉及不同市政部门及服务单位，不宜将周边寺院、博物馆及政府建筑一并视为公园运营范围；这些地点各有管理主体。', facts: '基本游览资料', where: '位置', fee: '公园门票', duration: '建议停留', access: '开放情况', photo: '推荐拍摄机位', review: '游客评价', route: '继续探索', source: '资料来源', admission: '公园通常免费，周边场馆可能单独收费', length: '公园45–90分钟；周边景点可安排半日', opening: '公共开放空间；活动期间可能临时管制', maps: '查看路线', reviewText: '近期游客体验与评分请查看 Google 地图对应地点条目。不同景点的评价不应混用公园的评分。' },
+}[lang];
+const sectionImages: Record<string, string> = {
+  'Wat Si Saket Vientiane Laos': '/gallery/nearby-wat-si-saket.jpg',
+  'Ho Phra Keo Vientiane Laos': '/gallery/nearby-ho-phra-keo.jpg',
+  'Presidential Palace Vientiane Laos': '/gallery/nearby-presidential-palace.jpg',
+  'Vientiane Night Market Laos': '/gallery/nearby-night-market.jpg',
+  'King Anouvong Statue Vientiane Laos': '/gallery/chao-anouvong-park-4.jpg',
+  'Chao Anouvong Park Vientiane Laos': '/gallery/chao-anouvong-park-1.jpg',
+};
+const attractionLinks: Record<string, string> = {
+  'Wat Si Saket Vientiane Laos': 'wat-si-saket',
+  'Ho Phra Keo Vientiane Laos': 'ho-phra-keo',
+  'Presidential Palace Vientiane Laos': 'presidential-palace',
+};
+
 const faqLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -30,11 +50,34 @@ const faqLd = {
 };
 ---
 
-<section class="py-16 bg-ivory text-ink">
+<section class="pt-28 pb-16 bg-ivory text-ink">
   <div class="max-w-4xl mx-auto px-5">
     <a href={`/${lang}/`} class="text-gold hover:underline text-sm">← {messages.header.home}</a>
     <h1 class="mt-3 font-display font-semibold text-3xl md:text-5xl text-teak">{content.title}</h1>
+    {isNewGuide && <p class="mt-3 text-gold font-semibold">{labels.subtitle}</p>}
     <p class="mt-4 text-lg text-ink/80 leading-relaxed">{content.intro}</p>
+    {slug === 'night-market' && <img src="/gallery/nearby-night-market.jpg" alt="Vientiane Night Market, Mekong riverfront, Laos" loading="lazy" class="mt-7 rounded-xl w-full max-h-96 object-cover" />}
+
+    {isNewGuide && (
+      <>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" class="rounded-full bg-teak text-ivory px-5 py-2 hover:bg-teakDeep">{labels.maps} ↗</a>
+          <a href={`/${lang}/nearby-attractions/`} class="rounded-full border border-gold text-teak px-5 py-2 hover:bg-gold/10">{TOPICS[lang]['nearby-attractions'].title}</a>
+        </div>
+        <aside class="mt-12 rounded-2xl bg-white/65 border border-gold/25 p-6 md:p-8">
+          <h2 class="font-display text-2xl text-teak">{labels.about}</h2>
+          <p class="mt-4 leading-relaxed text-ink/80">{labels.parkManagement}</p>
+        </aside>
+        <div class="mt-10">
+          <h2 class="font-display text-2xl text-teak border-l-4 border-gold pl-3">{labels.facts}</h2>
+          <dl class="mt-4 grid sm:grid-cols-2 gap-3">
+            {[[labels.where, 'Fa Ngum riverfront, Chanthabouly, Vientiane Capital, Laos'], [labels.fee, labels.admission], [labels.duration, labels.length], [labels.access, labels.opening]].map(([name, value]) => (
+              <div class="rounded-xl border border-gold/20 bg-white/50 p-4"><dt class="text-sm text-gold">{name}</dt><dd class="mt-1 text-ink/85">{value}</dd></div>
+            ))}
+          </dl>
+        </div>
+      </>
+    )}
 
     {messages.guide?.verifiedNote && (
       <p class="mt-3 max-w-3xl text-xs text-ink/55 border-l-2 border-gold/40 pl-3">{messages.guide.verifiedNote}</p>
@@ -44,8 +87,32 @@ const faqLd = {
       <div class="mt-10">
         <h2 class="font-display text-2xl text-teak border-l-4 border-gold pl-3">{s.title}</h2>
         <p class="mt-3 text-ink/80 leading-relaxed">{s.text}</p>
+        {s.mapQuery && sectionImages[s.mapQuery] && (
+          <figure class="mt-5"><img src={sectionImages[s.mapQuery]} alt={`${s.title} — ${s.mapQuery}`} loading="lazy" class="rounded-xl border border-gold/20 w-full max-h-80 object-cover" /></figure>
+        )}
+        {s.mapQuery && (
+          <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.mapQuery)}`} target="_blank" rel="noopener noreferrer" class="mt-3 inline-block text-gold hover:underline text-sm">
+            {lang === 'lo' ? 'ເປີດແຜນທີ່ສະຖານທີ່' : lang === 'zh' ? '打开该景点 Google 地图' : 'Open this place in Google Maps'} ↗
+          </a>
+        )}
+        {s.mapQuery && attractionLinks[s.mapQuery] && <a class="ml-4 text-gold hover:underline text-sm inline-block" href={`/${lang}/${attractionLinks[s.mapQuery]}/`}>{lang === 'zh' ? '查看完整景点介绍' : lang === 'lo' ? 'ອ່ານຄູ່ມືສະຖານທີ່' : 'Read the full attraction guide'} →</a>}
       </div>
     ))}
+
+    {isNewGuide && (
+      <div class="mt-12 grid md:grid-cols-2 gap-6">
+        <section class="rounded-xl border border-gold/25 bg-white/50 p-6">
+          <h2 class="font-display text-2xl text-teak">{labels.photo}</h2>
+          <p class="mt-3 text-ink/80">{lang === 'zh' ? '在雕像广场拍摄完整纪念碑和基座；到河滨步道以湄公河及对岸为背景。西萨格寺适合拍摄回廊与屋檐，玉佛寺可聚焦雕刻细节，主席府仅从允许的公共视角取景。尊重当地拍摄限制。' : lang === 'lo' ? 'ຖ່າຍຮູບອານຸສາວະລີຈາກລານ, ເກັບພາບແມ່ນ້ຳຂອງຈາກທາງຍ່າງ. ຢູ່ວັດສີສະເກດສາມາດສັງເກດລະບຽງ ແລະ ຫຼັງຄາ; ຢູ່ຫໍພະແກ້ວເບິ່ງລວດລາຍແກະສະຫຼັກ. ເຄົາລົບກົດການຖ່າຍຮູບ.' : 'Frame the full statue and pedestal from the square, then use the river promenade for the Mekong backdrop. At Wat Si Saket, look for cloister and roof details; at Ho Phra Keo, focus on carved architectural elements. Photograph the palace only from permitted public viewpoints.'}</p>
+        </section>
+        <section class="rounded-xl border border-gold/25 bg-white/50 p-6">
+          <h2 class="font-display text-2xl text-teak">{labels.review}</h2>
+          <p class="mt-3 text-ink/80">{labels.reviewText}</p>
+          <a class="mt-3 inline-block text-gold hover:underline" href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
+        </section>
+      </div>
+    )}
+    {isNewGuide && <div class="mt-8 text-sm text-ink/60"><span class="font-semibold">{labels.source}: </span><a class="underline hover:text-gold" href="https://kpl.gov.la/En/Detail.aspx?id=3289" target="_blank" rel="noopener noreferrer">KPL · Mekong riverside redevelopment</a> · <a class="underline hover:text-gold" href="https://kpl.gov.la/en/detail.aspx?id=3425" target="_blank" rel="noopener noreferrer">KPL · Vientiane smoke-free park</a> · <a class="underline hover:text-gold" href="https://www.tourismlaos.org/central-provinces/vientiane-capital/" target="_blank" rel="noopener noreferrer">Tourism Laos · Vientiane</a></div>}
 
     {galleryImgs.length > 0 && (
       <div class="mt-12">

@@ -1,0 +1,30 @@
+---
+import type { Lang } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const copy = {
+  en: { eyebrow: 'Explore nearby', title: 'More to see around the Mekong', description: 'Pair the riverside with Vientiane’s historic temples and civic landmarks. Each stop has its own map location and visiting arrangements.', cta: 'See the walking guide' },
+  lo: { eyebrow: 'ທ່ຽວໃກ້ຄຽງ', title: 'ຄົ້ນພົບສະຖານທີ່ໃກ້ແມ່ນ້ຳຂອງ', description: 'ທ່ຽວວັດເກົ່າ ແລະ ອາຄານສຳຄັນຂອງວຽງຈັນຕໍ່ຈາກສວນແຄມຂອງ. ແຕ່ລະບ່ອນມີແຜນທີ່ ແລະ ເວລາເປີດຕ່າງກັນ.', cta: 'ເບິ່ງຄູ່ມືເສັ້ນທາງ' },
+  zh: { eyebrow: '探索周边', title: '湄公河畔还有这些景点', description: '将河滨散步与万象历史寺院、市政地标串成半日行程。每个地点均有独立地图定位，入场安排分别核对。', cta: '查看周边步行攻略' },
+}[lang];
+const places = [
+  { image: '/gallery/nearby-wat-si-saket.jpg', slug: 'wat-si-saket', name: { en: 'Wat Si Saket', lo: 'ວັດສີສະເກດ', zh: '西萨格寺' }[lang] },
+  { image: '/gallery/nearby-ho-phra-keo.jpg', slug: 'ho-phra-keo', name: { en: 'Ho Phra Keo', lo: 'ຫໍພະແກ້ວ', zh: '玉佛寺' }[lang] },
+  { image: '/gallery/nearby-presidential-palace.jpg', slug: 'presidential-palace', name: { en: 'Presidential Palace', lo: 'ຫໍຄຳປະທານປະເທດ', zh: '主席府' }[lang] },
+];
+---
+<section id="nearby" class="py-16 bg-ivory text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl">{copy.eyebrow}</p>
+    <h2 class="font-display text-teak text-3xl md:text-4xl font-semibold mt-2">{copy.title}</h2>
+    <p class="mt-4 text-ink/75 max-w-3xl">{copy.description}</p>
+    <div class="mt-8 grid md:grid-cols-3 gap-5">
+      {places.map((place) => (
+        <a href={`/${lang}/${place.slug}/`} class="group rounded-2xl overflow-hidden bg-white border border-gold/25 hover:shadow-lg transition">
+          <img src={place.image} alt={place.name} class="h-52 w-full object-cover" loading="lazy" />
+          <div class="p-5"><h3 class="font-display text-teak font-semibold text-xl">{place.name}</h3><span class="mt-3 inline-block text-sm text-gold">{copy.cta} →</span></div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

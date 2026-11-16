@@ -1,10 +1,11 @@
 import type { Lang } from './ui';
 
-export type TopicSlug = 'chao-anouvong-statue' | 'photos' | 'mekong-sunset' | 'night-market';
+export type TopicSlug = 'chao-anouvong-statue' | 'photos' | 'mekong-sunset' | 'night-market' | 'nearby-attractions' | 'visit-planner';
 
 export interface TopicSection {
   title: string;
   text: string;
+  mapQuery?: string;
 }
 
 export interface TopicFaq {
@@ -27,10 +28,52 @@ export const TOPIC_SLUGS: TopicSlug[] = [
   'photos',
   'mekong-sunset',
   'night-market',
+  'nearby-attractions',
+  'visit-planner',
 ];
 
 export const TOPICS: Record<Lang, Record<TopicSlug, TopicContent>> = {
   en: {
+    'nearby-attractions': {
+      title: 'Attractions Near Chao Anouvong Park | Vientiane Walking Guide',
+      description: 'Explore Wat Si Saket, Ho Phra Keo, the Presidential Palace and the Mekong night market near Chao Anouvong Park with a practical walking route.',
+      intro: 'The riverside park is a useful starting point for a compact exploration of central Vientiane. Combine a historic temple visit in the daytime with the riverside at sunset; check individual venues before setting off.',
+      sections: [
+        { title: 'Wat Si Saket — historic temple', text: 'Built during the reign of King Anouvong in the early nineteenth century, Wat Si Saket is noted for its cloister of Buddha images. Visit before the late-afternoon park walk, wear clothing covering shoulders and knees, and confirm current museum admission and opening times at the gate.', mapQuery: 'Wat Si Saket Vientiane Laos' },
+        { title: 'Ho Phra Keo — former royal temple', text: 'Opposite Wat Si Saket, Ho Phra Keo is a former temple complex now known for religious art and architecture. Allow time to examine its exterior details, then continue toward the Presidential Palace area. Entry conditions can change.', mapQuery: 'Ho Phra Keo Vientiane Laos' },
+        { title: 'Presidential Palace — exterior view', text: 'The palace and its landscaped grounds form a recognizable civic landmark near the temple district. It is not a standard public walk-in attraction: admire the building from permitted public viewpoints and respect security boundaries.', mapQuery: 'Presidential Palace Vientiane Laos' },
+        { title: 'King Anouvong Statue and riverside', text: 'Return to the park to see the statue and the broad Mekong promenade. The open park is generally free to enter; use the monument as a meeting point and keep clear of ceremonial areas.', mapQuery: 'King Anouvong Statue Vientiane Laos' },
+        { title: 'Vientiane Night Market', text: 'As evening approaches, the riverside vendors set up near the park. Browse textiles, clothes and snacks after sunset; stall times vary and the market should not be confused with the park’s public access hours.', mapQuery: 'Vientiane Night Market Laos' },
+        { title: 'Suggested sequence and transport', text: 'Start at Wat Si Saket, cross to Ho Phra Keo, pass the palace exterior, then walk west toward the statue and market. The central cluster is walkable for most visitors, but crossings can be busy. Use a tuk-tuk or taxi for longer transfers and open the specific map pin for each stop.' },
+      ],
+      gallery: [],
+      faqs: [
+        { q: 'Can I see these places in one afternoon?', a: 'The exterior landmarks and park can fit in an afternoon, but visit the temples earlier if you want to enter. Allow extra time for admission queues and local opening hours.' },
+        { q: 'Do the attractions have the same opening hours?', a: 'No. The park is an outdoor public space; temples and museums have their own admission and opening arrangements. Confirm locally.' },
+        { q: 'Where should I finish the walk?', a: 'Finish at the park’s riverside promenade near sunset, followed by the night market if stalls are operating.' },
+      ],
+      related: ['visit-planner', 'chao-anouvong-statue', 'night-market'],
+    },
+    'visit-planner': {
+      title: 'Chao Anouvong Park Visitor Guide | Time, Access & Route',
+      description: 'Plan a free riverside visit to Chao Anouvong Park in Vientiane: best time, routes, transport, sunset, facilities and practical tips.',
+      intro: 'A 45–90 minute park visit works well in late afternoon. The park itself is an outdoor public promenade, while surrounding vendors and buildings keep separate schedules.',
+      sections: [
+        { title: 'Quick facts', text: 'Location: Mekong riverfront, central Vientiane, Laos (Fa Ngum riverside area). Main landmark: King Anouvong statue. Park entry: generally free. Suggested stay: 45–90 minutes, longer if visiting the evening market. Always confirm temporary closures or events on site.', mapQuery: 'Chao Anouvong Park Vientiane Laos' },
+        { title: 'Arriving and getting around', text: 'Walk from accommodation in central Vientiane when practical. For a tuk-tuk or taxi, show the driver the park’s map pin rather than relying on an English street-name pronunciation. The promenade is mostly level; allow extra care at street crossings and in wet weather.' },
+        { title: 'A three-stop park route', text: '1. Begin by the King Anouvong statue and read the monument setting. 2. Continue along the riverside promenade for broad views of the Mekong and the Thai bank. 3. Return toward the evening market area after dusk, without blocking vendors or cyclists.' },
+        { title: 'When to go and what to bring', text: 'Late afternoon is comfortable for photographs and a sunset stroll; the exact sunset time changes throughout the year. Bring drinking water, sun protection, small Lao kip notes and footwear suitable for warm pavement. Rain or haze can obscure the horizon.' },
+        { title: 'Food, restrooms and families', text: 'Food vendors and cafés are concentrated near the riverfront, especially in the evening. Public restroom access and any charge vary by facility. Keep children close near roads and crowded stalls; do not climb the statue pedestal.' },
+        { title: 'Staying nearby', text: 'Central Vientiane guesthouses and hotels within walking distance of Fa Ngum Road are convenient for an evening visit. Compare recent reviews for noise, accessibility and actual walking distance instead of assuming every “riverside” listing faces the park.' },
+      ],
+      gallery: [1, 3, 11],
+      faqs: [
+        { q: 'How much does it cost to enter?', a: 'The public park normally has no admission charge. Food, transport and paid facilities are separate.' },
+        { q: 'Is the park open at night?', a: 'It is an outdoor public area commonly visited in the evening; temporary security or event restrictions can apply. Market stalls operate on their own schedule.' },
+        { q: 'Is one hour enough?', a: 'Yes for the statue and a short promenade stroll. Set aside longer for photography, sunset and the market.' },
+      ],
+      related: ['nearby-attractions', 'mekong-sunset', 'photos'],
+    },
     'chao-anouvong-statue': {
       title: 'Chao Anouvong Statue | Vientiane Riverside Monument',
       description:
@@ -202,6 +245,46 @@ export const TOPICS: Record<Lang, Record<TopicSlug, TopicContent>> = {
   },
 
   lo: {
+    'nearby-attractions': {
+      title: 'ສະຖານທີ່ທ່ຽວໃກ້ສວນເຈົ້າອະນຸວົງ | ຄູ່ມືຍ່າງທ່ຽວວຽງຈັນ',
+      description: 'ຄູ່ມືທ່ຽວວັດສີສະເກດ, ຫໍພະແກ້ວ, ຫໍຄຳ ແລະ ຕະຫຼາດກາງຄືນໃກ້ສວນເຈົ້າອະນຸວົງ.',
+      intro: 'ເລີ່ມຍ່າງທ່ຽວຈາກວັດເກົ່າໃນຕອນກາງວັນ ແລ້ວມາຊົມແມ່ນ້ຳຂອງຍາມແລງ. ກວດເວລາເປີດຂອງແຕ່ລະສະຖານທີ່ກ່ອນເດີນທາງ.',
+      sections: [
+        { title: 'ວັດສີສະເກດ', text: 'ວັດເກົ່າສະໄໝເຈົ້າອະນຸວົງ ມີລະບຽງພະພຸດທະຮູບທີ່ໂດດເດັ່ນ. ຄວນໄປໃນຊ່ວງກາງວັນ, ແຕ່ງກາຍສຸພາບ ແລະ ກວດຄ່າເຂົ້າຊົມຢູ່ປະຕູ.', mapQuery: 'Wat Si Saket Vientiane Laos' },
+        { title: 'ຫໍພະແກ້ວ', text: 'ອາຄານອະດີດວັດຫຼວງຢູ່ຝັ່ງກົງຂ້າມວັດສີສະເກດ ເໝາະສຳລັບຮຽນຮູ້ສິລະປະ ແລະ ສະຖາປັດຕະຍະກຳ. ກວດເວລາເປີດກ່ອນເຂົ້າຊົມ.', mapQuery: 'Ho Phra Keo Vientiane Laos' },
+        { title: 'ຫໍຄຳປະທານປະເທດ', text: 'ຊົມດ້ານນອກຂອງອາຄານ ແລະ ສວນຈາກຈຸດສາທາລະນະທີ່ອະນຸຍາດ. ນີ້ບໍ່ແມ່ນສະຖານທີ່ທີ່ສາມາດເຂົ້າຊົມພາຍໃນໄດ້ທົ່ວໄປ.', mapQuery: 'Presidential Palace Vientiane Laos' },
+        { title: 'ອານຸສາວະລີເຈົ້າອະນຸວົງ', text: 'ກັບມາສວນແຄມຂອງເພື່ອຊົມຮູບປັ້ນ ແລະ ທາງຍ່າງລຽບແມ່ນ້ຳ. ປົກກະຕິບໍ່ເສຍຄ່າເຂົ້າສວນ.', mapQuery: 'King Anouvong Statue Vientiane Laos' },
+        { title: 'ຕະຫຼາດກາງຄືນວຽງຈັນ', text: 'ຮ້ານຄ້າແຄມຂອງເລີ່ມຄຶກຄື້ນໃນຕອນແລງ. ຊົມເຄື່ອງນຸ່ງ, ຂອງຝາກ ແລະ ອາຫານ; ເວລາຮ້ານເປີດອາດປ່ຽນໄດ້.', mapQuery: 'Vientiane Night Market Laos' },
+        { title: 'ເສັ້ນທາງແນະນຳ', text: 'ເລີ່ມທີ່ວັດສີສະເກດ → ຫໍພະແກ້ວ → ຊົມຫໍຄຳດ້ານນອກ → ອານຸສາວະລີ → ຕະຫຼາດກາງຄືນ. ລະວັງລົດໃນເວລາຂ້າມຖະໜົນ ແລະ ໃຊ້ແຜນທີ່ແຕ່ລະຈຸດ.' },
+      ],
+      gallery: [],
+      faqs: [
+        { q: 'ໄປທ່ຽວໄດ້ພາຍໃນໜຶ່ງຕອນບ່າຍບໍ?', a: 'ສາມາດຊົມຈຸດພາຍນອກ ແລະ ສວນໄດ້, ແຕ່ຖ້າຈະເຂົ້າວັດຄວນໄປໄວກວ່ານັ້ນ.' },
+        { q: 'ທຸກບ່ອນເປີດເວລາດຽວກັນບໍ?', a: 'ບໍ່. ວັດ ແລະ ພິພິທະພັນມີເວລາ ແລະ ຄ່າເຂົ້າຕ່າງຈາກສວນ.' },
+        { q: 'ຄວນຈົບເສັ້ນທາງຢູ່ໃສ?', a: 'ຈົບຢູ່ທາງຍ່າງແຄມຂອງຍາມຕາເວັນຕົກ ແລ້ວໄປຕະຫຼາດກາງຄືນ.' },
+      ],
+      related: ['visit-planner', 'chao-anouvong-statue', 'night-market'],
+    },
+    'visit-planner': {
+      title: 'ຄູ່ມືໄປທ່ຽວສວນເຈົ້າອະນຸວົງ | ເວລາ ແລະ ເສັ້ນທາງ',
+      description: 'ແນະນຳເວລາໄປທ່ຽວ, ການເດີນທາງ, ເສັ້ນທາງຍ່າງ ແລະ ຂໍ້ຄວນຮູ້ຂອງສວນເຈົ້າອະນຸວົງ.',
+      intro: 'ຈັດເວລາ 45–90 ນາທີເພື່ອຍ່າງທ່ຽວສວນໃນຕອນບ່າຍແກ່. ສວນເປັນພື້ນທີ່ສາທາລະນະ, ສ່ວນຮ້ານຄ້າມີເວລາເປີດຕ່າງກັນ.',
+      sections: [
+        { title: 'ຂໍ້ມູນພື້ນຖານ', text: 'ທີ່ຕັ້ງ: ແຄມແມ່ນ້ຳຂອງ ບໍລິເວນຖະໜົນຟ້າງຸ່ມ, ວຽງຈັນ, ລາວ. ຈຸດເດັ່ນ: ອານຸສາວະລີເຈົ້າອະນຸວົງ. ເຂົ້າສວນປົກກະຕິຟຣີ; ກວດກາການປິດຊົ່ວຄາວຢູ່ສະຖານທີ່.', mapQuery: 'Chao Anouvong Park Vientiane Laos' },
+        { title: 'ການເດີນທາງ', text: 'ສາມາດຍ່າງຈາກທີ່ພັກໃນໃຈກາງເມືອງ. ຖ້າໃຊ້ລົດຕຸກຕຸກ ຫຼື ແທັກຊີ ໃຫ້ສະແດງແຜນທີ່ສວນແກ່ຄົນຂັບ. ລະວັງຖະໜົນ ແລະ ພື້ນປຽກ.' },
+        { title: 'ເສັ້ນທາງ 3 ຈຸດ', text: '1. ເລີ່ມທີ່ຮູບປັ້ນເຈົ້າອະນຸວົງ. 2. ຍ່າງລຽບແມ່ນ້ຳຂອງຊົມຝັ່ງໄທ. 3. ກັບມາບໍລິເວນຕະຫຼາດຍາມແລງ ໂດຍບໍ່ກີດຂວາງທາງ.' },
+        { title: 'ເວລາທີ່ເໝາະສົມ', text: 'ຕອນບ່າຍແກ່ເໝາະກັບການຖ່າຍຮູບ ແລະ ຊົມຕາເວັນຕົກ. ເວລາຕາເວັນຕົກປ່ຽນຕາມລະດູ. ນຳນ້ຳດື່ມ, ໝວກ ແລະ ເງິນກີບຍ່ອຍ.' },
+        { title: 'ອາຫານ ແລະ ຄອບຄົວ', text: 'ມີຮ້ານອາຫານໃກ້ທາງຍ່າງ ໂດຍສະເພາະຕອນແລງ. ຫ້ອງນ້ຳອາດມີຄ່າໃຊ້ຈ່າຍ. ດູແລເດັກນ້ອຍໃກ້ຖະໜົນ ແລະ ຫ້າມປີນຖານຮູບປັ້ນ.' },
+        { title: 'ທີ່ພັກໃກ້ຄຽງ', text: 'ໂຮງແຮມ ແລະ ເຮືອນພັກໃນໃຈກາງວຽງຈັນໃກ້ຖະໜົນຟ້າງຸ່ມເໝາະກັບການຍ່າງທ່ຽວຕອນແລງ. ກວດໄລຍະທາງຈິງ ແລະ ຄຳຄິດເຫັນຫຼ້າສຸດກ່ອນຈອງ.' },
+      ],
+      gallery: [1, 3, 11],
+      faqs: [
+        { q: 'ເຂົ້າສວນເສຍເງິນບໍ?', a: 'ປົກກະຕິເຂົ້າສວນຟຣີ; ອາຫານ ແລະ ການເດີນທາງມີຄ່າໃຊ້ຈ່າຍຕ່າງຫາກ.' },
+        { q: 'ມາຕອນຄ່ຳໄດ້ບໍ?', a: 'ສວນມັກມີຄົນມາຍາມແລງ; ອາດມີການຈຳກັດໃນມື້ມີງານພິເສດ.' },
+        { q: 'ໜຶ່ງຊົ່ວໂມງພຽງພໍບໍ?', a: 'ພຽງພໍສຳລັບຊົມຮູບປັ້ນ ແລະ ຍ່າງສັ້ນໆ; ເພີ່ມເວລາຖ້າຈະຊົມຕາເວັນຕົກ.' },
+      ],
+      related: ['nearby-attractions', 'mekong-sunset', 'photos'],
+    },
     'chao-anouvong-statue': {
       title: 'ຮູບປັ້ນເຈົ້າອະນຸວົງ | ອານຸສາວະລີຝັ່ງແມ່ນ້ຳວຽງຈັນ',
       description:
@@ -373,6 +456,46 @@ export const TOPICS: Record<Lang, Record<TopicSlug, TopicContent>> = {
   },
 
   zh: {
+    'nearby-attractions': {
+      title: '昭阿奴翁公园周边景点｜万象市中心步行指南',
+      description: '从昭阿奴翁公园步行探索西萨格寺、玉佛寺、主席府与万象夜市，附地点导航和半日路线。',
+      intro: '湄公河滨的昭阿奴翁公园适合作为万象市中心的步行终点：白天参观历史建筑，傍晚沿河观景。各场馆开放时间不同，出发前请分别核对。',
+      sections: [
+        { title: '西萨格寺（Wat Si Saket）', text: '这座19世纪初由阿奴翁王时期兴建的寺院，以回廊内大量佛像闻名。建议白天到访，穿着覆盖肩膀与膝盖的服装；入内参观前请在入口确认票价与当日时间。', mapQuery: 'Wat Si Saket Vientiane Laos' },
+        { title: '玉佛寺（Ho Phra Keo）', text: '位于西萨格寺对面的前王室寺院建筑，以宗教艺术与传统建筑细部为主要看点。适合和西萨格寺一同安排，入场条件以现场公告为准。', mapQuery: 'Ho Phra Keo Vientiane Laos' },
+        { title: '主席府（Presidential Palace）', text: '主席府的建筑外观与周边绿地是市中心醒目的地标。这里不是通常可直接入内参观的景点，宜从允许停留的公共空间观赏，遵守警戒与拍摄规定。', mapQuery: 'Presidential Palace Vientiane Laos' },
+        { title: '阿奴翁王雕像及河滨', text: '回到公园看国王雕像与开阔的湄公河步道。公园通常免费进入；拍照时勿攀爬雕像底座，也不要妨碍纪念活动。', mapQuery: 'King Anouvong Statue Vientiane Laos' },
+        { title: '万象夜市', text: '傍晚河滨摊贩逐渐营业，可逛服饰、纪念品和小吃摊。摊位营业时间会随天气及日期改变，不能与公园开放时间混为一谈。', mapQuery: 'Vientiane Night Market Laos' },
+        { title: '推荐半日步行顺序', text: '西萨格寺 → 玉佛寺 → 主席府外围 → 阿奴翁王雕像 → 河畔日落 → 夜市。市中心几个地点适合分段步行，但过马路需注意车流。每个地点使用下方独立 Google 地图入口，不共用公园定位。' },
+      ],
+      gallery: [],
+      faqs: [
+        { q: '这些景点半天能走完吗？', a: '外观与公园步行通常可以；若要进入寺院或博物馆，请提早开始，并预留售票与参观时间。' },
+        { q: '所有景点都免费开放吗？', a: '不是。公园一般免费，寺院和博物馆可能收费并有独立开放时段，请以现场公布为准。' },
+        { q: '傍晚在哪里结束路线？', a: '建议在阿奴翁公园河滨欣赏日落，再视摊位营业情况前往夜市。' },
+      ],
+      related: ['visit-planner', 'chao-anouvong-statue', 'night-market'],
+    },
+    'visit-planner': {
+      title: '昭阿奴翁公园参观攻略｜地址、时间、交通与路线',
+      description: '万象昭阿奴翁公园实用攻略：湄公河位置、交通、免费入场、推荐停留时间、拍照及夜市路线。',
+      intro: '建议预留45–90分钟在傍晚游览河滨公园。公园是开放式公共空间，周围夜市、餐饮与其他场馆各有自己的营业时间。',
+      sections: [
+        { title: '基本信息与位置', text: '位置：老挝万象市中心湄公河畔、Fa Ngum 河滨路一带。核心地标为阿奴翁王雕像。公园通常无需门票；推荐停留45–90分钟。举办活动或临时管制时，须以现场信息为准。', mapQuery: 'Chao Anouvong Park Vientiane Laos' },
+        { title: '交通与到达', text: '住在万象市中心的旅客可视距离步行前往。搭乘突突车或出租车时，直接向司机出示公园地图定位。河滨步道整体较平坦，但过街、雨后湿滑路面及人群密集区域需留意。' },
+        { title: '三站游览路线', text: '第一站：阿奴翁王雕像，了解纪念碑与广场环境。第二站：沿湄公河步道观景，欣赏河对岸泰国方向的景色。第三站：天黑后走向夜市区域，不阻挡摊贩和其他行人。' },
+        { title: '最佳时间与摄影建议', text: '傍晚的光线更适合雕像及河景拍摄，具体日落时间随季节变化。旱季也可能有烟霾，雨季需防突发降雨。建议带饮用水、遮阳用品和少量老挝基普零钱。' },
+        { title: '设施、餐饮和亲子提醒', text: '河滨一带有餐饮摊位和咖啡馆，夜间选择更多。公共厕所是否收费取决于具体设施。携带儿童请留意车辆和拥挤摊位，不要攀爬雕像基座。' },
+        { title: '附近住宿选择', text: 'Fa Ngum 路与市中心的旅馆、酒店适合晚上步行到公园。预订前应查看实际步行路线、噪声和近期住客评价，不要只凭“河景”字样判断是否正对公园。' },
+      ],
+      gallery: [1, 3, 11],
+      faqs: [
+        { q: '进入昭阿奴翁公园要买票吗？', a: '公共公园通常免费进入；饮食、交通及部分设施费用另计。' },
+        { q: '晚上可以游览吗？', a: '河滨傍晚通常有游客活动，但遇庆典或临时管制可能受限；夜市摊位有独立营业时段。' },
+        { q: '只安排一小时够吗？', a: '看雕像和短程河滨散步通常足够；若想看日落、摄影或逛夜市，建议延长。' },
+      ],
+      related: ['nearby-attractions', 'mekong-sunset', 'photos'],
+    },
     'chao-anouvong-statue': {
       title: '昭阿奴翁国王雕像 | 万象河畔地标',
       description:

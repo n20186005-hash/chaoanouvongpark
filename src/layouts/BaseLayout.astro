@@ -10,13 +10,14 @@ interface Props {
   messages: Record<string, any>;
   path?: string;
   alternates?: { hreflang: string; href: string }[];
+  structuredData?: object[];
 }
-const { lang, title, description, messages, path, alternates } = Astro.props;
+const { lang, title, description, messages, path, alternates, structuredData } = Astro.props;
 const canonical = path ? `${siteConfig.domain}${path}` : `${siteConfig.domain}/${lang}/`;
 
 const faqs = (messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : [];
 
-const jsonLd = [
+const jsonLd = structuredData ?? [
   {
     '@context': 'https://schema.org',
     '@type': ['TouristAttraction', 'Park'],

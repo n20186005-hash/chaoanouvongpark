@@ -1,8 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TopicPage from '../../components/TopicPage.astro';
+import AttractionPage from '../../components/AttractionPage.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import { languagesList, htmlLang, type Lang } from '../../i18n/ui';
 import { TOPIC_SLUGS, TOPICS, type TopicSlug } from '../../i18n/topics';
+import { ATTRACTIONS, ATTRACTION_SLUGS, VENUES, type AttractionSlug } from '../../i18n/attractions';
 import { siteConfig } from '../../config';
 import lo from '../../i18n/lo.json';
 import en from '../../i18n/en.json';
@@ -10,20 +14,33 @@ import zh from '../../i18n/zh.json';
 
 export function getStaticPaths() {
   return languagesList.flatMap((lang) =>
-    TOPIC_SLUGS.map((topic) => ({ params: { lang, topic } })),
+    [...TOPIC_SLUGS, ...ATTRACTION_SLUGS].map((topic) => ({ params: { lang, topic } })),
   );
 }
 
-const { lang, topic } = Astro.params as { lang: Lang; topic: TopicSlug };
-const content = TOPICS[lang][topic];
+const { lang, topic } = Astro.params as { lang: Lang; topic: TopicSlug | AttractionSlug };
+const isAttraction = (ATTRACTION_SLUGS as readonly string[]).includes(topic);
+const content = isAttraction ? ATTRACTIONS[lang][topic as AttractionSlug] : TOPICS[lang][topic as TopicSlug];
 const m = { lo, en, zh }[lang];
 
 const path = `/${lang}/${topic}/`;
 const alternates = languagesList
   .map((l) => ({ hreflang: htmlLang[l], href: `${siteConfig.domain}/${l}/${topic}/` }))
   .concat([{ hreflang: 'x-default', href: `${siteConfig.domain}/lo/${topic}/` }]);
+const venue = isAttraction ? VENUES[topic as AttractionSlug] : null;
+const structuredData = venue ? [{
+  '@context': 'https://schema.org', '@type': 'TouristAttraction',
+  name: ATTRACTIONS[lang][topic as AttractionSlug].name,
+  description: content.description,
+  url: `${siteConfig.domain}${path}`,
+  image: `${siteConfig.domain}${venue.image}`,
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.mapQuery)}`,
+  address: { '@type': 'PostalAddress', streetAddress: venue.address, addressLocality: 'Vientiane', addressCountry: 'LA' },
+}] : undefined;
 ---
 
-<BaseLayout lang={lang} title={content.title} description={content.description} messages={m} path={path} alternates={alternates}>
-  <TopicPage lang={lang} content={content} slug={topic} messages={m} />
+<BaseLayout lang={lang} title={isAttraction ? ATTRACTIONS[lang][topic as AttractionSlug].name : TOPICS[lang][topic as TopicSlug].title} description={content.description} messages={m} path={path} alternates={alternates} structuredData={structuredData}>
+  <Header lang={lang} messages={m} topic={topic} />
+  {isAttraction ? <AttractionPage lang={lang} slug={topic as AttractionSlug} /> : <TopicPage lang={lang} content={TOPICS[lang][topic as TopicSlug]} slug={topic as TopicSlug} messages={m} />}
+  <Footer lang={lang} messages={m} />
 </BaseLayout>
