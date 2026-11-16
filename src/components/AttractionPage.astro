@@ -6,7 +6,9 @@ interface Props { lang: Lang; slug: AttractionSlug }
 const { lang, slug } = Astro.props;
 const a = ATTRACTIONS[lang][slug];
 const v = VENUES[slug];
-const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.mapQuery)}`;
+const mapUrl = slug === 'presidential-palace'
+  ? 'https://maps.app.goo.gl/FcHxHjj8A9iEK7Bx9'
+  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.mapQuery)}`;
 const localizedDetails = {
   lo: {
     'wat-si-saket': { type: 'ວັດພຸດທະສາສະໜາເກົ່າ ແລະ ມໍລະດົກວັດທະນະທຳ', visit: '45–75 ນາທີ', hours: 'ຂໍ້ມູນ Tourism Laos: 08:00–12:00 ແລະ 13:00–17:00; ປິດວັນພັກລັດ. ກວດຢູ່ປະຕູອີກຄັ້ງ', fee: 'Tourism Laos ລະບຸ 30,000 ກີບ; ກວດລາຄາປັດຈຸບັນຢູ່ສະຖານທີ່' },
