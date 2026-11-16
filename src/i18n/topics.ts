@@ -36,8 +36,8 @@ export const TOPICS: Record<Lang, Record<TopicSlug, TopicContent>> = {
   en: {
     'nearby-attractions': {
       title: 'Attractions Near Chao Anouvong Park | Vientiane Walking Guide',
-      description: 'Explore Wat Si Saket, Ho Phra Keo, the Presidential Palace and the Mekong night market near Chao Anouvong Park with a practical walking route.',
-      intro: 'The riverside park is a useful starting point for a compact exploration of central Vientiane. Combine a historic temple visit in the daytime with the riverside at sunset; check individual venues before setting off.',
+      description: 'Explore 32 distinct Vientiane landmarks, temples, museums and markets with individual English, Lao and Chinese guides, photographs and separate Google Maps links.',
+      intro: 'The riverside park is a useful starting point for central Vientiane. This guide preserves a compact riverfront walking route, followed by an expanded directory of 32 separate places across the capital. Longer-distance landmarks need their own transfers; check each venue before setting off.',
       sections: [
         { title: 'Wat Si Saket — historic temple', text: 'Built during the reign of King Anouvong in the early nineteenth century, Wat Si Saket is noted for its cloister of Buddha images. Visit before the late-afternoon park walk, wear clothing covering shoulders and knees, and confirm current museum admission and opening times at the gate.', mapQuery: 'Wat Si Saket Vientiane Laos' },
         { title: 'Ho Phra Keo — former royal temple', text: 'Opposite Wat Si Saket, Ho Phra Keo is a former temple complex now known for religious art and architecture. Allow time to examine its exterior details, then continue toward the Presidential Palace area. Entry conditions can change.', mapQuery: 'Ho Phra Keo Vientiane Laos' },
@@ -247,8 +247,8 @@ export const TOPICS: Record<Lang, Record<TopicSlug, TopicContent>> = {
   lo: {
     'nearby-attractions': {
       title: 'ສະຖານທີ່ທ່ຽວໃກ້ສວນເຈົ້າອະນຸວົງ | ຄູ່ມືຍ່າງທ່ຽວວຽງຈັນ',
-      description: 'ຄູ່ມືທ່ຽວວັດສີສະເກດ, ຫໍພະແກ້ວ, ຫໍຄຳ ແລະ ຕະຫຼາດກາງຄືນໃກ້ສວນເຈົ້າອະນຸວົງ.',
-      intro: 'ເລີ່ມຍ່າງທ່ຽວຈາກວັດເກົ່າໃນຕອນກາງວັນ ແລ້ວມາຊົມແມ່ນ້ຳຂອງຍາມແລງ. ກວດເວລາເປີດຂອງແຕ່ລະສະຖານທີ່ກ່ອນເດີນທາງ.',
+      description: 'ຄູ່ມື 32 ສະຖານທີ່ໃນວຽງຈັນ ມີໜ້າແຍກ ຮູບຖ່າຍ ແຜນທີ່ ແລະ ຂໍ້ມູນສາມພາສາ.',
+      intro: 'ເລີ່ມຈາກວັດເກົ່າ ແລະ ມາຊົມແມ່ນ້ຳຂອງຍາມແລງ. ດ້ານລຸ່ມມີລາຍຊື່ 32 ສະຖານທີ່ທົ່ວນະຄອນ ເຊິ່ງແຕ່ລະແຫ່ງມີໜ້າຂອງຕົນ. ບາງຈຸດຕ້ອງໃຊ້ລົດ ຈຶ່ງຄວນກວດເສັ້ນທາງກ່ອນ.',
       sections: [
         { title: 'ວັດສີສະເກດ', text: 'ວັດເກົ່າສະໄໝເຈົ້າອະນຸວົງ ມີລະບຽງພະພຸດທະຮູບທີ່ໂດດເດັ່ນ. ຄວນໄປໃນຊ່ວງກາງວັນ, ແຕ່ງກາຍສຸພາບ ແລະ ກວດຄ່າເຂົ້າຊົມຢູ່ປະຕູ.', mapQuery: 'Wat Si Saket Vientiane Laos' },
         { title: 'ຫໍພະແກ້ວ', text: 'ອາຄານອະດີດວັດຫຼວງຢູ່ຝັ່ງກົງຂ້າມວັດສີສະເກດ ເໝາະສຳລັບຮຽນຮູ້ສິລະປະ ແລະ ສະຖາປັດຕະຍະກຳ. ກວດເວລາເປີດກ່ອນເຂົ້າຊົມ.', mapQuery: 'Ho Phra Keo Vientiane Laos' },
@@ -458,8 +458,8 @@ export const TOPICS: Record<Lang, Record<TopicSlug, TopicContent>> = {
   zh: {
     'nearby-attractions': {
       title: '昭阿奴翁公园周边景点｜万象市中心步行指南',
-      description: '从昭阿奴翁公园步行探索西萨格寺、玉佛寺、主席府与万象夜市，附地点导航和半日路线。',
-      intro: '湄公河滨的昭阿奴翁公园适合作为万象市中心的步行终点：白天参观历史建筑，傍晚沿河观景。各场馆开放时间不同，出发前请分别核对。',
+      description: '收录万象 32 处独立地点，覆盖寺院、古迹、博物馆、市场及河滨，提供中英老三语详情、各自地图和实景照片。',
+      intro: '湄公河滨的昭阿奴翁公园适合作为万象市中心的步行终点：白天参观历史建筑，傍晚沿河观景。下方另有覆盖全市的 32 处独立景点目录，每处都有自己的三语详页和地图；部分郊区景点不能步行抵达，需要另外规划交通。',
       sections: [
         { title: '西萨格寺（Wat Si Saket）', text: '这座19世纪初由阿奴翁王时期兴建的寺院，以回廊内大量佛像闻名。建议白天到访，穿着覆盖肩膀与膝盖的服装；入内参观前请在入口确认票价与当日时间。', mapQuery: 'Wat Si Saket Vientiane Laos' },
         { title: '玉佛寺（Ho Phra Keo）', text: '位于西萨格寺对面的前王室寺院建筑，以宗教艺术与传统建筑细部为主要看点。适合和西萨格寺一同安排，入场条件以现场公告为准。', mapQuery: 'Ho Phra Keo Vientiane Laos' },

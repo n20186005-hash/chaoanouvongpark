@@ -1,6 +1,7 @@
 import type { Lang } from './ui';
+import { EXTRA_SLUGS, EXTRA_VENUES, EXTRA_ATTRACTIONS } from './extendedAttractions';
 
-export const ATTRACTION_SLUGS = ['wat-si-saket', 'ho-phra-keo', 'presidential-palace'] as const;
+export const ATTRACTION_SLUGS = ['wat-si-saket', 'ho-phra-keo', 'presidential-palace', ...EXTRA_SLUGS] as const;
 export type AttractionSlug = typeof ATTRACTION_SLUGS[number];
 
 type Attraction = {
@@ -29,6 +30,7 @@ type Venue = {
   management: { en: string; lo: string; zh: string };
   image: string;
   gallery: string[];
+  imageSource?: string;
   source: string;
 };
 
@@ -81,6 +83,7 @@ export const VENUES: Record<AttractionSlug, Venue> = {
     gallery: ['/gallery/nearby-presidential-palace.jpg', '/gallery/presidential-palace-view.jpg'],
     source: 'https://www.visitlaos.org/explore-laos/vientiane/',
   },
+  ...EXTRA_VENUES,
 };
 
 export const ATTRACTIONS: Record<Lang, Record<AttractionSlug, Attraction>> = {
@@ -124,6 +127,7 @@ export const ATTRACTIONS: Record<Lang, Record<AttractionSlug, Attraction>> = {
       photoTips: ['Use a wider lens from a permitted public sidewalk to show the full facade.', 'Look for a balanced, front-facing composition without crossing barriers.', 'Photograph in daylight to preserve architectural detail.'],
       faq: [{ q: 'Can tourists go inside the Presidential Palace?', a: 'Do not assume regular public access. It is a state building; plan for an exterior view only unless officially authorized.' }, { q: 'Is there an admission fee?', a: 'Viewing from a public street has no palace admission ticket. This does not imply access to the grounds.' }, { q: 'What can I combine it with?', a: 'Wat Si Saket, Ho Phra Keo and Chao Anouvong Park form a practical central Vientiane sightseeing cluster.' }],
     },
+    ...EXTRA_ATTRACTIONS.en,
   },
   lo: {
     'wat-si-saket': {
@@ -165,6 +169,7 @@ export const ATTRACTIONS: Record<Lang, Record<AttractionSlug, Attraction>> = {
       photoTips: ['ຖ່າຍພາບກວ້າງຈາກທາງສາທາລະນະ.', 'ຈັດພາບໃຫ້ເຫັນດ້ານໜ້າສົມມາດ.', 'ໃຊ້ແສງກາງວັນເນັ້ນລາຍລະອຽດ.'],
       faq: [{ q: 'ນັກທ່ອງທ່ຽວເຂົ້າພາຍໃນໄດ້ບໍ?', a: 'ບໍ່ຄວນຄາດວ່າມີການເຂົ້າຊົມທົ່ວໄປ. ວາງແຜນຊົມດ້ານນອກ.' }, { q: 'ມີຄ່າເຂົ້າບໍ?', a: 'ຊົມຈາກຖະໜົນສາທາລະນະບໍ່ມີປີ້ເຂົ້າອາຄານ.' }, { q: 'ຄວນລວມກັບບ່ອນໃດ?', a: 'ວັດສີສະເກດ, ຫໍພະແກ້ວ ແລະ ສວນເຈົ້າອະນຸວົງ.' }],
     },
+    ...EXTRA_ATTRACTIONS.lo,
   },
   zh: {
     'wat-si-saket': {
@@ -206,5 +211,6 @@ export const ATTRACTIONS: Record<Lang, Record<AttractionSlug, Attraction>> = {
       photoTips: ['从合法人行道使用广角拍摄完整立面。', '利用建筑轴线构成平衡的正面画面。', '白天拍摄能更清楚呈现屋顶和柱列细节。'],
       faq: [{ q: '普通游客能进入万象主席府吗？', a: '不应假设可以自由入内。这里是公务建筑，通常应按外观景点规划，除非获得官方许可。' }, { q: '参观主席府需要门票吗？', a: '从公共街道欣赏外观无需购买建筑门票，但这不代表可以进入院内。' }, { q: '附近哪些景点可以连游？', a: '可与西萨格寺、玉佛寺和昭阿奴翁公园组成市中心步行路线。' }],
     },
+    ...EXTRA_ATTRACTIONS.zh,
   },
 };

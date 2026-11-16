@@ -1,0 +1,33 @@
+---
+import type { Lang } from '../i18n/ui';
+import { EXTRA_DIRECTORY } from '../i18n/extendedAttractions';
+
+const { lang } = Astro.props as { lang: Lang };
+const copy = {
+  en: { title:'Explore every Vientiane place', lead:'A growing directory of distinct landmarks, temples, museums and riverfront stops. Open each guide for an individual Google Maps pin, local history, practical tips and photo information.', link:'Open full place guide', map:'Dedicated map', missing:'Photo being matched to this exact venue' },
+  lo: { title:'ສຳຫຼວດທຸກສະຖານທີ່ໃນວຽງຈັນ', lead:'ລາຍຊື່ວັດ ພິພິທະພັນ ອະນຸສາວະລີ ແລະ ບ່ອນແຄມຂອງ. ແຕ່ລະໜ້າມີແຜນທີ່ສະເພາະ ປະຫວັດ ແລະ ຄຳແນະນຳ.', link:'ອ່ານຄູ່ມືສະຖານທີ່', map:'ແຜນທີ່ສະເພາະ', missing:'ກຳລັງກວດຮູບຖ່າຍຂອງບ່ອນນີ້' },
+  zh: { title:'探索万象全部周边地点', lead:'独立收录寺院、历史地标、博物馆、市场及河滨景点。每处都有自己的三语详情、独立 Google 地图、游览建议与专属照片资料。', link:'查看独立景点详页', map:'独立地图', missing:'该地点专属实景照片正在匹配核实' },
+}[lang];
+const original = [
+  {slug:'wat-si-saket',en:'Wat Si Saket',lo:'ວັດສີສະເກດ',zh:'西萨格寺',image:'/gallery/nearby-wat-si-saket.jpg'},
+  {slug:'ho-phra-keo',en:'Ho Phra Keo',lo:'ຫໍພະແກ້ວ',zh:'玉佛寺',image:'/gallery/nearby-ho-phra-keo.jpg'},
+  {slug:'presidential-palace',en:'Presidential Palace',lo:'ຫໍຄຳປະທານປະເທດ',zh:'主席府',image:'/gallery/nearby-presidential-palace.jpg'},
+];
+const places = [...original, ...EXTRA_DIRECTORY];
+---
+<section id="all-nearby-places" class="bg-ivory text-ink py-16">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="text-gold font-semibold tracking-widest">{places.length} PLACES · VIENTIANE</p>
+    <h2 class="font-display text-teak text-3xl md:text-4xl mt-3">{copy.title}</h2>
+    <p class="mt-4 max-w-4xl text-ink/75 leading-relaxed">{copy.lead}</p>
+    <div class="mt-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {places.map((p, i) => <article class="rounded-2xl overflow-hidden bg-white border border-gold/25">
+        {p.image ? <img src={p.image} alt={p[lang]} loading="lazy" class="w-full h-48 object-cover" /> : <div class="h-48 bg-teakDeep text-ivory/70 grid place-content-center p-6 text-center"><span class="font-display text-xl text-gold">{p[lang]}</span><small class="mt-3">{copy.missing}</small></div>}
+        <div class="p-5"><span class="text-xs text-gold">{String(i+1).padStart(2,'0')}</span><h3 class="font-display text-xl text-teak font-semibold mt-1">{p[lang]}</h3>
+          <p class="mt-2 text-sm text-ink/60">Google Maps · {copy.map}</p>
+          <a class="inline-block mt-4 text-gold font-medium hover:underline" href={`/${lang}/${p.slug}/`}>{copy.link} →</a>
+        </div>
+      </article>)}
+    </div>
+  </div>
+</section>
