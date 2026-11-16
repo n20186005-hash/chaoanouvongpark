@@ -18,6 +18,7 @@ const items = TOPIC_SLUGS.map((slug) => ({
   <div class="max-w-7xl mx-auto px-5">
     <p class="font-hand text-gold text-xl md:text-2xl">{lang === 'lo' ? 'ສຳຫຼວດ' : lang === 'zh' ? '探索' : 'Explore'}</p>
     <h2 class="font-display font-semibold text-3xl md:text-4xl text-ivory mt-2">{lang === 'lo' ? 'ຄູ່ມື ແລະ ຫົວຂໍ້' : lang === 'zh' ? '游览指南与专题' : 'Guides & topics'}</h2>
+    <a href={`/${lang}/sources/`} class="inline-block mt-4 text-goldBright underline hover:text-white">{lang === 'lo' ? 'ແຫຼ່ງຂໍ້ມູນ ແລະ ເອກະສານອ້າງອີງ' : lang === 'zh' ? '资料来源与参考文献' : 'Sources & references'}</a>
     <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {items.map((it) => (
         <a

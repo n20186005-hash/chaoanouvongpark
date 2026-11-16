@@ -7,7 +7,6 @@ import About from '../../components/About.astro';
 import Ecosystem from '../../components/Ecosystem.astro';
 import History from '../../components/History.astro';
   import Guide from '../../components/Guide.astro';
-  import Sources from '../../components/Sources.astro';
   import Food from '../../components/Food.astro';
 import Gallery from '../../components/Gallery.astro';
 import Reviews from '../../components/Reviews.astro';
@@ -42,7 +41,6 @@ const { lang, messages } = await getI18n(Astro.url);
     <Food messages={messages} />
     <Gallery messages={messages} />
     <Reviews messages={messages} />
-    <Sources messages={messages} />
     <TransportSection messages={messages} lang={lang} />
     <FacilitiesSection messages={messages} lang={lang} />
     <SeasonalStrategy messages={messages} lang={lang} />

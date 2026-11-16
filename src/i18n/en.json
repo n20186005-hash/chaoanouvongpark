@@ -576,48 +576,41 @@
   "legal": {
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: November 16, 2026",
       "sections": [
-        {
-          "h": "1. Information Collection",
-          "p": "This is a static site and does not actively collect personally identifiable information."
-        },
-        {
-          "h": "2. Cookies & Analytics",
-          "p": "We may use third-party anonymous analytics to understand site usage. These tools use cookies."
-        },
-        {
-          "h": "3. External Links",
-          "p": "This site contains links to third-party websites (like Google Maps). We are not responsible for their privacy policies."
-        }
+        { "h": "1. Scope", "p": "This policy applies to the independent Chao Anouvong Park travel guide. The site provides public travel information without requiring an account or identity documents." },
+        { "h": "2. Information processed", "p": "Hosting and security services may process IP addresses, browser type, access times, requested pages and error logs to deliver pages, troubleshoot issues and prevent misuse. We do not actively request names or payment details through site forms." },
+        { "h": "3. Analytics and cookies", "p": "We use Google Analytics to understand visits and page usage. This service may use cookies, device information and network identifiers. You can restrict or clear cookies in your browser; see our Cookie Settings page." },
+        { "h": "4. External services", "p": "Weather information comes from Open-Meteo, and the guide links to services such as Google Maps. After you visit a third-party site, its own privacy practices apply. We do not control its cookies or data handling." },
+        { "h": "5. Email and corrections", "p": "If you email us, we receive the address and information you choose to send. We use it to respond, review corrections and follow up when necessary. Please do not email sensitive identity information." },
+        { "h": "6. Retention and security", "p": "We retain correspondence only as reasonably needed to handle requests, maintain security and meet applicable obligations. No online transmission is completely secure; retention by hosting and analytics providers follows their configurations." },
+        { "h": "7. Your choices and rights", "p": "You can manage cookies through your browser and email us to request access, correction or deletion of personal information you previously sent. We handle requests subject to applicable law and reasonable verification." },
+        { "h": "8. Updates and contact", "p": "We will update this policy and its date if our services or data practices materially change. Contact laupetter72@gmail.com with privacy questions or corrections." }
       ]
     },
     "terms": {
       "title": "Terms of Service",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: November 16, 2026",
       "sections": [
-        {
-          "h": "1. Acceptance of Terms",
-          "p": "By accessing this site, you agree to these terms."
-        },
-        {
-          "h": "2. Disclaimer",
-          "p": "Information is for reference only. We do not guarantee absolute accuracy due to changes in park conditions."
-        },
-        {
-          "h": "3. Intellectual Property",
-          "p": "Unless otherwise stated, content is copyrighted for non-commercial reference only."
-        }
+        { "h": "1. Nature of the service", "p": "This independent travel information project is not the official website of any government, venue operator or merchant. Content supports travel planning and general education; it is not an official notice, booking guarantee or professional advice." },
+        { "h": "2. Accuracy and changes", "p": "Hours, admission, routes, transport, weather and events can change without notice. Check the venue or local notices before travel and use your own judgment when planning." },
+        { "h": "3. Visitor responsibility", "p": "Follow local laws, religious-site requirements, venue rules and safety notices. Use current road and pedestrian conditions when following maps and routes." },
+        { "h": "4. Third-party services", "p": "Links may lead to Google Maps, tourism authorities, weather providers and other sites. Those services have their own terms; we do not warrant their availability or content." },
+        { "h": "5. Text and photographs", "p": "Original editorial text and site design are protected as applicable. Rights and copyrights in displayed photographs belong to their respective photographers or rights holders. Do not republish without permission." },
+        { "h": "6. Availability", "p": "Maintenance, technical faults and third-party outages may interrupt access. We may update pages and features as needed and cannot guarantee error-free, uninterrupted service." },
+        { "h": "7. Limitation of responsibility", "p": "To the extent permitted by applicable law, we are not responsible for indirect losses arising from reliance on public travel information, third-party links or temporary changes. Nothing here excludes liability that cannot legally be excluded." },
+        { "h": "8. Corrections and contact", "p": "For errors, technical support or questions about these terms, email laupetter72@gmail.com. Updated terms will show a new revision date." }
       ]
     },
     "cookies": {
       "title": "Cookie Settings",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: November 16, 2026",
       "sections": [
-        {
-          "h": "Manage Preferences",
-          "p": "You can disable cookies in your browser settings. Disabling cookies will not affect your ability to read the guide."
-        }
+        { "h": "1. What cookies are", "p": "Cookies are small identifiers stored by a website or third-party service in your browser. They can support preferences, usage measurement and service operation." },
+        { "h": "2. Cookies on this site", "p": "No login is required. Google Analytics may use analytics cookies to measure visits and page interactions; hosting and security services may use technically necessary identifiers." },
+        { "h": "3. How to manage cookies", "p": "Use your browser privacy settings to block third-party cookies, delete existing cookies or clear them when closing the browser. You can also enable built-in tracking protection." },
+        { "h": "4. Effect of blocking", "p": "Blocking analytics cookies should not prevent reading static travel content, though some third-party embedded functions or saved preferences may be affected." },
+        { "h": "5. Third parties and updates", "p": "Providers such as Google Analytics may change their cookies under their own policies. We will update this notice as site features change. Contact laupetter72@gmail.com for assistance." }
       ]
     }
   },

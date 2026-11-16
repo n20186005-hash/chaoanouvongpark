@@ -1,0 +1,27 @@
+---
+import { languagesList, htmlLang, type Lang } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Sources from '../../components/Sources.astro';
+import Footer from '../../components/Footer.astro';
+import { siteConfig } from '../../config';
+import lo from '../../i18n/lo.json';
+import en from '../../i18n/en.json';
+import zh from '../../i18n/zh.json';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const messages = { lo, en, zh }[lang];
+const path = `/${lang}/sources/`;
+const alternates = languagesList.map((l) => ({ hreflang: htmlLang[l], href: `${siteConfig.domain}/${l}/sources/` }))
+  .concat([{ hreflang: 'x-default', href: `${siteConfig.domain}/lo/sources/` }]);
+---
+
+<BaseLayout lang={lang} title={messages.sources.heading} description={messages.sources.intro} messages={messages} path={path} alternates={alternates}>
+  <Header lang={lang} messages={messages} topic="sources" />
+  <main class="pt-16"><Sources messages={messages} lang={lang} /></main>
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>

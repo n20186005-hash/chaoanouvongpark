@@ -3,8 +3,9 @@ import { siteConfig } from '../config';
 
 interface Props {
   messages: Record<string, any>;
+  lang: 'lo' | 'en' | 'zh';
 }
-const { messages } = Astro.props;
+const { messages, lang } = Astro.props;
 const s = messages.sources;
 ---
 
@@ -31,6 +32,17 @@ const s = messages.sources;
         <h3 class="font-display text-xl text-goldBright">{s.factTitle}</h3>
         <p class="mt-3 text-sm text-ivory/80">{s.factText}</p>
       </div>
+    </div>
+
+    <div class="mt-8 border-t border-gold/20 pt-8">
+      <h3 class="font-display text-xl text-goldBright">{messages.footer.sourcesTitle}</h3>
+      <p class="mt-2 text-sm text-ivory/80">{messages.footer.sourcesNote}</p>
+      <ul class="mt-4 grid sm:grid-cols-2 gap-3 text-sm">
+        {siteConfig.sources.map((source) => (
+          <li><a href={source.url} target="_blank" rel="noopener noreferrer" class="text-goldBright underline hover:text-white">{source.name[lang]}</a></li>
+        ))}
+      </ul>
+      <p class="mt-5 text-sm text-ivory/80">{messages.footer.dataSource}</p>
     </div>
 
     <div class="mt-8 rounded-2xl border border-gold/30 bg-white/5 p-5">
