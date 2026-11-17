@@ -108,9 +108,9 @@ export const EXTRA_ATTRACTIONS = Object.fromEntries((['en','lo','zh'] as Lang[])
     const subject = PHOTO_SUBJECTS[e.slug]?.[lang];
     const steps = profile?.[2].split('|');
     const visitTip = steps ? lang === 'zh'
-      ? `先${steps[0]}，再${steps[1]}。根据现场动线调整，不要进入未开放区域。`
+      ? `${steps[0]}，接着${steps[1]}。根据现场动线调整，不要进入未开放区域。`
       : lang === 'lo'
-        ? `${steps[0]}; ${steps[1]}. ປັບເສັ້ນທາງຕາມປ້າຍຢູ່ສະຖານທີ່.`
+        ? `${steps[0]} ຈາກນັ້ນ${steps[1]}. ປັບເສັ້ນທາງຕາມປ້າຍຢູ່ສະຖານທີ່.`
         : `${steps[0]}; then ${steps[1]}. Adjust to posted access rules on arrival.`
       : undefined;
     const photoTips = subject ? lang === 'zh'
