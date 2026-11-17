@@ -9,6 +9,7 @@ type Attraction = {
   tagline: string;
   description: string;
   intro: string;
+  visitTip?: string;
   about: string;
   historical: string;
   architecture: string;

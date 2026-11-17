@@ -1,12 +1,13 @@
 ---
 import Timeline from './Timeline.astro';
 import ImageCompare from './ImageCompare.astro';
+import en from '../i18n/en.json';
 
 interface Props {
   messages: Record<string, any>;
 }
 const { messages } = Astro.props;
-const history = messages.history;
+const history: typeof en.history = messages.history;
 
 import { siteConfig } from '../config';
 const prefix = siteConfig.galleryPrefix;

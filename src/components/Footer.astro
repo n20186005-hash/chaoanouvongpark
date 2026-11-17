@@ -1,8 +1,9 @@
 ---
 import { siteConfig } from '../config';
+import type { Lang } from '../i18n/ui';
 
 interface Props {
-  lang: any;
+  lang: Lang;
   messages: Record<string, any>;
 }
 const { lang, messages } = Astro.props;

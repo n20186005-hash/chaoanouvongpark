@@ -1,9 +1,10 @@
 ---
+import en from '../i18n/en.json';
 interface Props {
   messages: Record<string, any>;
 }
 const { messages } = Astro.props;
-const about = messages.about;
+const about: typeof en.about = messages.about;
 ---
 
 <section id="about" class="py-20 bg-ivory text-ink">

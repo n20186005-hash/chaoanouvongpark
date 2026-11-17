@@ -1,15 +1,18 @@
 ---
 import { siteConfig } from '../config';
+import en from '../i18n/en.json';
 
 interface Props {
   messages: Record<string, any>;
 }
 const { messages } = Astro.props;
-const reviews = messages.reviews;
+type ReviewItem = { text: string; rating: string | number; name: string; date: string };
+type FeaturedReview = { text: string; source: string };
+const reviews: Omit<typeof en.reviews, 'items' | 'featured'> & { items: ReviewItem[]; featured: FeaturedReview[] } = messages.reviews;
 const mapsUrl = siteConfig.mapsUrl;
 
-const stars = (r: string) => {
-  const n = Math.round(parseFloat(r));
+const stars = (r: string | number) => {
+  const n = Math.round(parseFloat(String(r)));
   return '★'.repeat(n) + '☆'.repeat(5 - n);
 };
 ---

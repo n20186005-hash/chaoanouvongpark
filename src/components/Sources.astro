@@ -1,12 +1,13 @@
 ---
 import { siteConfig } from '../config';
+import en from '../i18n/en.json';
 
 interface Props {
   messages: Record<string, any>;
   lang: 'lo' | 'en' | 'zh';
 }
 const { messages, lang } = Astro.props;
-const s = messages.sources;
+const s: typeof en.sources = messages.sources;
 ---
 
 <section id="sources" class="py-16 bg-teakDeep text-ivory">

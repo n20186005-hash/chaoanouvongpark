@@ -1,5 +1,6 @@
 import type { Lang } from './ui';
 import { ATTRACTION_PROFILES } from './attractionProfiles';
+import { PHOTO_SUBJECTS } from './photoSubjects';
 
 /**
  * Distinct Vientiane places, not duplicate aliases or generic itineraries.
@@ -104,6 +105,20 @@ export const EXTRA_ATTRACTIONS = Object.fromEntries((['en','lo','zh'] as Lang[])
   Object.fromEntries(entries.map(e => {
     const t = localized[lang]; const name=e[lang]; const fact=e[`${lang}Fact` as 'enFact'|'loFact'|'zhFact'];
     const profile = ATTRACTION_PROFILES[e.slug]?.[lang];
+    const subject = PHOTO_SUBJECTS[e.slug]?.[lang];
+    const steps = profile?.[2].split('|');
+    const visitTip = steps ? lang === 'zh'
+      ? `先${steps[0]}，再${steps[1]}。根据现场动线调整，不要进入未开放区域。`
+      : lang === 'lo'
+        ? `${steps[0]}; ${steps[1]}. ປັບເສັ້ນທາງຕາມປ້າຍຢູ່ສະຖານທີ່.`
+        : `${steps[0]}; then ${steps[1]}. Adjust to posted access rules on arrival.`
+      : undefined;
+    const photoTips = subject ? lang === 'zh'
+      ? [`取景重点是${subject}，画面应保留可辨认的现场环境。`, e.kind === 'museum' ? '馆内摄影前请先查看展览规定，尊重展品与访客。' : '从允许停留的区域拍摄，避免阻挡通道或宗教活动。']
+      : lang === 'lo'
+        ? [`ເນັ້ນຖ່າຍພາບ${subject} ພ້ອມບັນຍາກາດຮອບຂ້າງ.`, e.kind === 'museum' ? 'ກວດກົດລະບຽບຖ່າຍຮູບພາຍໃນກ່ອນ ແລະ ເຄົາລົບຜູ້ຊົມ.' : 'ຖ່າຍຈາກຈຸດທີ່ອະນຸຍາດ ບໍ່ກີດຂວາງທາງຍ່າງ ຫຼື ພິທີກຳ.']
+        : [`Frame ${subject} with enough surroundings to identify the actual location.`, e.kind === 'museum' ? 'Check exhibit photography rules and respect visitors before photographing indoors.' : 'Shoot from permitted public areas without obstructing paths or religious activity.']
+      : [...t.photos];
     const tagline = `${t[e.kind]} · ${lang === 'zh' ? '万象' : lang === 'lo' ? 'ວຽງຈັນ' : 'Vientiane'}`;
     const intro = lang === 'zh'
       ? `来到${name}，可以从它所处的城市街区开始认识这处${t[e.kind]}。详细位置：${e.address}。建议先了解主要看点，再依据当天开放与交通情况规划行程。`
@@ -117,10 +132,10 @@ export const EXTRA_ATTRACTIONS = Object.fromEntries((['en','lo','zh'] as Lang[])
         : `${name} is a distinct ${t[e.kind].toLowerCase()}, not a facility inside Chao Anouvong Park. ${t.context} Consult the site's own visitor notices.`;
     return [e.slug, {
       name, tagline, description:`${name} — ${fact}`,
-      intro, about, historical:fact,
+      intro, visitTip, about, historical:fact,
       architecture:profile?.[0] ?? t.watch, culture:profile?.[1] ?? t.context,
       highlights:profile ? [profile[0],profile[1]] : [`${name} · ${t[e.kind]}`,t.watch],
-      route:profile?.[2].split('|') ?? [...t.steps],guidelines:[...t.rules],photoTips:[...t.photos],
+      route:steps ?? [...t.steps],guidelines:[...t.rules],photoTips,
       faq:[{q:t.faq[0],a:t.faq[1]},{q:t.faq[2],a:t.faq[3]}],
     }];
   }))

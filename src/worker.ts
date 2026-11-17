@@ -25,7 +25,7 @@ async function handleWeather(request: Request, ctx: any): Promise<Response> {
   const lon = url.searchParams.get('lon') || DEFAULT_LON;
   const apiUrl = buildWeatherUrl(lat, lon);
 
-  const cache = caches.default;
+  const cache = (caches as CacheStorage & { default: Cache }).default;
   const cacheKey = new Request(apiUrl);
 
   let response = await cache.match(cacheKey);

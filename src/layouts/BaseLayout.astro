@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { siteConfig } from '../config';
 import { htmlLang, languagesList, type Lang } from '../i18n/ui';
+type FAQ = { q: string; a: string };
 
 interface Props {
   lang: Lang;
@@ -15,7 +16,7 @@ interface Props {
 const { lang, title, description, messages, path, alternates, structuredData } = Astro.props;
 const canonical = path ? `${siteConfig.domain}${path}` : `${siteConfig.domain}/${lang}/`;
 
-const faqs = (messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : [];
+const faqs: FAQ[] = (messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : [];
 
 const jsonLd = structuredData ?? [
   {
@@ -119,8 +120,9 @@ const jsonLd = structuredData ?? [
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      const analyticsWindow = window as Window & { dataLayer?: unknown[][] };
+      analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+      function gtag(...args: unknown[]) { analyticsWindow.dataLayer?.push(args); }
       gtag('js', new Date());
       gtag('config', 'G-HXM22WWPKP');
     </script>

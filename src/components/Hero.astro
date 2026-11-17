@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../config';
+import en from '../i18n/en.json';
 import type { Lang } from '../i18n/ui';
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
   messages: Record<string, any>;
 }
 const { lang, messages } = Astro.props;
-const hero = messages.hero;
+const hero: typeof en.hero = messages.hero;
 
 const main = hero.titleMain as string;
 const accent = hero.titleAccent as string;
